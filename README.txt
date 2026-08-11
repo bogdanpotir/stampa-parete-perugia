@@ -1,6 +1,10 @@
-Aggiornamento V10 - Fix immagini
+V11 - Fix galleria immagini
 
-Questa versione corregge il caricamento immagini usando i nomi file attualmente caricati su GitHub nella cartella pics:
+File da caricare nella root del repository:
+- index.html
+- style.css
+
+Non serve ricaricare le immagini se sono già in /pics con questi nomi:
 - hero-parete.jpg.png
 - ristorante-bar.jpg.png
 - hotel-agriturismo.jpg.png
@@ -9,10 +13,4 @@ Questa versione corregge il caricamento immagini usando i nomi file attualmente 
 - soggiorno-moderno.jpg.png
 - progetto-partner.jpg.png
 
-Cosa caricare su GitHub:
-1) index.html nella cartella principale del repository
-2) style.css nella cartella principale del repository
-
-Non serve ricaricare le immagini se sono già presenti dentro /pics con i nomi indicati sopra.
-
-Nota: se in futuro vuoi rinominare le immagini correttamente senza doppia estensione, rinominale in /pics e poi bisognerà aggiornare gli stessi percorsi dentro index.html.
+Questa versione forza anche il browser a ricaricare il CSS usando style.css?v=11.

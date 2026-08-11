@@ -1108,3 +1108,108 @@ span {
     border-radius: 20px;
   }
 }
+
+
+/* =========================================================
+   V11 - Fix definitivo galleria immagini
+   Corregge layout immagini/etichette e forza il caricamento CSS con ?v=11.
+   ========================================================= */
+.gallery {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 22px !important;
+  align-items: stretch !important;
+}
+
+.gallery-item {
+  position: relative !important;
+  display: block !important;
+  min-height: 280px !important;
+  height: 100% !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border-radius: 24px !important;
+  background: #ddd !important;
+  box-shadow: 0 18px 48px rgba(37, 27, 19, 0.12) !important;
+}
+
+.gallery-item img {
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  transform: none !important;
+}
+
+.gallery-item::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 1 !important;
+  background: linear-gradient(180deg, rgba(0,0,0,0.03) 25%, rgba(0,0,0,0.68) 100%) !important;
+  pointer-events: none !important;
+}
+
+.gallery-item span {
+  position: absolute !important;
+  left: 18px !important;
+  right: 18px !important;
+  bottom: 18px !important;
+  z-index: 2 !important;
+  display: block !important;
+  width: auto !important;
+  max-width: calc(100% - 36px) !important;
+  color: #fff !important;
+  font-size: clamp(1.05rem, 2vw, 1.25rem) !important;
+  line-height: 1.18 !important;
+  font-weight: 900 !important;
+  text-shadow: 0 2px 14px rgba(0,0,0,0.55) !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  word-break: normal !important;
+  writing-mode: horizontal-tb !important;
+}
+
+.hero-visual {
+  overflow: hidden !important;
+}
+
+.hero-image {
+  display: block !important;
+  width: 100% !important;
+  height: clamp(320px, 44vw, 560px) !important;
+  min-height: 320px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 24px !important;
+}
+
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: 1fr !important;
+  }
+  .gallery-item {
+    min-height: 240px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery-item {
+    min-height: 215px !important;
+    border-radius: 20px !important;
+  }
+  .gallery-item span {
+    left: 14px !important;
+    right: 14px !important;
+    bottom: 14px !important;
+  }
+  .hero-image {
+    min-height: 230px !important;
+    height: 62vw !important;
+    border-radius: 20px !important;
+  }
+}
