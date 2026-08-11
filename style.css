@@ -247,6 +247,10 @@ h3 {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.cards.four {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .card,
 .comparison-item,
 .form-box,
@@ -278,7 +282,7 @@ h3 {
 
 .comparison-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 18px;
 }
 
@@ -524,6 +528,7 @@ h3 {
 @media (max-width: 900px) {
   .hero-content,
   .cards.three,
+  .cards.four,
   .comparison-grid,
   .gallery,
   .pricing-box,
@@ -677,7 +682,8 @@ span {
   min-width: 0;
 }
 
-.cards.three {
+.cards.three,
+.cards.four {
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
@@ -927,6 +933,7 @@ span {
   }
 
   .cards.three,
+  .cards.four,
   .comparison-grid,
   .gallery {
     grid-template-columns: 1fr;
@@ -1211,5 +1218,31 @@ span {
     min-height: 230px !important;
     height: 62vw !important;
     border-radius: 20px !important;
+  }
+}
+
+
+/* =========================================================
+   V12 - Aggiornamenti scuole/asili + 5 vantaggi senza numerazione
+   ========================================================= */
+.cards.four {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.benefits-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+}
+
+.benefits-grid .comparison-item {
+  min-height: 250px;
+}
+
+.benefits-grid .comparison-item h3 {
+  margin-bottom: 18px;
+}
+
+@media (max-width: 1180px) {
+  .benefits-grid {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)) !important;
   }
 }
