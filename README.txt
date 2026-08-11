@@ -1,42 +1,18 @@
-STRUTTURA FINALE — Landing page Stampa su Parete Perugia/Umbria
+Aggiornamento V10 - Fix immagini
 
-Carica su GitHub questi file e cartelle nella root del repository:
+Questa versione corregge il caricamento immagini usando i nomi file attualmente caricati su GitHub nella cartella pics:
+- hero-parete.jpg.png
+- ristorante-bar.jpg.png
+- hotel-agriturismo.jpg.png
+- ufficio-reception.jpg.png
+- cameretta-bambini.jpg.png
+- soggiorno-moderno.jpg.png
+- progetto-partner.jpg.png
 
-index.html
-style.css
-README.txt
-pics/
-  preview.jpg
-  hero-parete.jpg
-  ristorante-bar.jpg
-  hotel-agriturismo.jpg
-  ufficio-reception.jpg
-  cameretta-bambini.jpg
-  soggiorno-moderno.jpg
-  progetto-partner.jpg
+Cosa caricare su GitHub:
+1) index.html nella cartella principale del repository
+2) style.css nella cartella principale del repository
 
-Aggiornamenti inclusi:
-- pagina responsive per PC, tablet e cellulare;
-- numero WhatsApp impostato su 393204178026;
-- Google Form collegato ai pulsanti preventivo;
-- meta description SEO inserita;
-- titolo principale: Stampa su parete Perugia, Umbria;
-- sezione FAQ aggiunta;
-- calcolatore prezzo con tariffa €80/m² e minimo 1 m²;
-- testo prezzo indicativo inserito;
-- immagine social preview in pics/preview.jpg;
-- tutte le immagini organizzate nella cartella pics.
+Non serve ricaricare le immagini se sono già presenti dentro /pics con i nomi indicati sopra.
 
-Come aggiornare le immagini:
-Sostituisci il file nella cartella pics mantenendo lo stesso nome.
-Esempio: per cambiare l'immagine del ristorante, sostituisci pics/ristorante-bar.jpg con una nuova immagine chiamata esattamente ristorante-bar.jpg.
-
-File preview social:
-La preview social è in pics/preview.jpg.
-Nel file index.html i tag Open Graph puntano a:
-https://bogdanpotir.github.io/stampa-parete-perugia/pics/preview.jpg
-
-Dopo il caricamento su GitHub:
-- attendi 1-3 minuti;
-- apri il sito;
-- aggiorna con CTRL+F5 se vedi ancora la versione vecchia.
+Nota: se in futuro vuoi rinominare le immagini correttamente senza doppia estensione, rinominale in /pics e poi bisognerà aggiornare gli stessi percorsi dentro index.html.
