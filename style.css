@@ -994,3 +994,61 @@ span {
     font-size: 0.92rem;
   }
 }
+
+/* Immagini mockup: sostituisci i file nella cartella /pics mantenendo gli stessi nomi */
+.mock-wall {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.44)),
+    url("pics/hero-parete.jpg") center/cover no-repeat;
+}
+
+.mock-wall::before {
+  inset: 0;
+  width: auto;
+  height: auto;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.02), rgba(0,0,0,0.38));
+  right: auto;
+  top: auto;
+}
+
+.mock-wall::after {
+  display: none;
+}
+
+.mock-wall span,
+.mock-wall strong {
+  color: #fff;
+  background: rgba(0,0,0,0.42);
+  backdrop-filter: blur(7px);
+}
+
+.gallery-item {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.gallery-item.restaurant {
+  background-image: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.55)), url("pics/ristorante-bar.jpg");
+}
+
+.gallery-item.hotel {
+  background-image: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.55)), url("pics/hotel-agriturismo.jpg");
+}
+
+.gallery-item.office {
+  background-image: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.55)), url("pics/ufficio-reception.jpg");
+}
+
+.gallery-item.kids {
+  background-image: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.55)), url("pics/cameretta-bambini.jpg");
+}
+
+.gallery-item.living {
+  background-image: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.55)), url("pics/soggiorno-moderno.jpg");
+}
+
+.gallery-item.partner {
+  background-image: linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.55)), url("pics/progetto-partner.jpg");
+}
