@@ -1,16 +1,20 @@
-V11 - Fix galleria immagini
+Aggiornamento V13 - Scuole / Asili
 
-File da caricare nella root del repository:
+File inclusi:
 - index.html
 - style.css
 
-Non serve ricaricare le immagini se sono già in /pics con questi nomi:
-- hero-parete.jpg.png
-- ristorante-bar.jpg.png
-- hotel-agriturismo.jpg.png
-- ufficio-reception.jpg.png
-- cameretta-bambini.jpg.png
-- soggiorno-moderno.jpg.png
-- progetto-partner.jpg.png
+Modifiche:
+- La sezione gallery usa ora una immagine dedicata per il riquadro "Scuole / Asili".
+- Percorso immagine atteso: pics/scuole-asili.jpg.png
+- CSS forzato con style.css?v=13
 
-Questa versione forza anche il browser a ricaricare il CSS usando style.css?v=11.
+Da caricare su GitHub nella root:
+- index.html
+- style.css
+
+Da caricare dentro la cartella pics quando pronta:
+- scuole-asili.jpg.png
+
+Nota:
+Se il file pics/scuole-asili.jpg.png non viene caricato, il riquadro "Scuole / Asili" mostrerà immagine mancante.
