@@ -21,3 +21,8 @@ Come aggiornare GitHub:
 3. Entra nella cartella pics e carica/sostituisci tutte le immagini contenute nella cartella pics di questo ZIP.
 4. Fai Commit changes.
 5. Dopo 1-3 minuti apri il sito e premi Ctrl+F5.
+
+V15:
+- Sezione vantaggi senza riquadri/card.
+- Layout desktop 2 + 2 + 1, con ultimo blocco Effetto professionale centrato e più ampio.
+- Titolo, sottotitolo e immagine separati per ogni vantaggio.
