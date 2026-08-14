@@ -11,24 +11,15 @@
 <meta content="Stampa su parete Perugia, Umbria" property="og:title"/>
 <meta content="Decorazioni personalizzate stampate direttamente su parete per case, uffici, locali, hotel, negozi, scuole e asili in Perugia e Umbria." property="og:description"/>
 <meta content="https://bogdanpotir.github.io/stampa-parete-perugia/" property="og:url"/>
-<meta content="https://bogdanpotir.github.io/stampa-parete-perugia/pics/preview.jpg" property="og:image"/>
+<meta content="https://bogdanpotir.github.io/stampa-parete-perugia/pics/preview.jpg.png" property="og:image"/>
 <meta content="1280" property="og:image:width"/>
 <meta content="640" property="og:image:height"/>
 <meta content="Anteprima servizio stampa su parete Perugia Umbria" property="og:image:alt"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="Stampa su parete Perugia, Umbria" name="twitter:title"/>
 <meta content="Decorazioni personalizzate stampate direttamente su parete per case, uffici, locali, hotel, negozi, scuole e asili." name="twitter:description"/>
-<meta content="https://bogdanpotir.github.io/stampa-parete-perugia/pics/preview.jpg" name="twitter:image"/>
-<!-- Google Analytics 4 - sostituire G-XXXXXXXXXX con il tuo ID quando disponibile
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
-<link href="style.css?v=16" rel="stylesheet"/>
+<meta content="https://bogdanpotir.github.io/stampa-parete-perugia/pics/preview.jpg.png" name="twitter:image"/>
+<link href="style.css?v=18" rel="stylesheet"/>
 </head>
 <body>
 <header class="hero">
@@ -217,6 +208,7 @@
           Compila il modulo per ricevere una prima valutazione gratuita. Puoi anche inviare direttamente foto e misure tramite WhatsApp.
         </p>
 <a class="btn secondary full" href="https://docs.google.com/forms/d/e/1FAIpQLSeVzuS1ifXUKh8f2-UYChsx437u9VIwvZ7YnH1cx9hwiAvC7g/viewform?usp=publish-editor" id="googleForm" rel="noopener" target="_blank">Apri modulo preventivo</a>
+<p class="privacy-inline">I dati inviati saranno utilizzati solo per ricontattarti in merito alla richiesta di informazioni o preventivo. Leggi la <a href="privacy.html">Privacy Policy</a>.</p>
 <ul class="form-list">
 <li>Nome e cognome</li>
 <li>Telefono / WhatsApp</li>
@@ -284,126 +276,330 @@
 </div>
 </div>
 <footer class="footer">
-<p><strong>Stampa su Parete Perugia</strong> — Servizio in fase di valutazione commerciale.</p>
+<p><strong>Stampa su Parete Perugia</strong> — Sito gestito da privato per studio di mercato e valutazione preliminare della domanda.</p>
 <p>Gli esempi mostrati sono simulazioni grafiche. Il calcolatore fornisce solo una stima indicativa: fattibilità, prezzo e disponibilità vengono confermati dopo verifica tecnica della parete e della grafica.</p>
-<p class="privacy">Privacy: i dati inviati tramite modulo o WhatsApp saranno usati solo per rispondere alla richiesta di informazioni/preventivo.</p>
+<p class="privacy">I dati inviati tramite modulo o WhatsApp saranno usati per rispondere alla richiesta, valutare fattibilità e interesse reale del servizio.</p>
+<p class="footer-links"><a href="privacy.html">Privacy Policy</a> · <a href="cookie.html">Cookie Policy</a> · <button class="footer-link-button" id="openCookiePreferencesFooter" type="button">Preferenze cookie</button></p>
 </footer>
+
+<div class="cookie-banner" id="cookieBanner" hidden>
+  <div class="cookie-banner-copy">
+    <h2>Preferenze privacy e cookie</h2>
+    <p>Usiamo strumenti di misurazione per capire se la pagina funziona e, solo con il tuo consenso, strumenti marketing come TikTok Pixel. Puoi accettare tutto, rifiutare o scegliere le preferenze.</p>
+  </div>
+  <div class="cookie-banner-actions">
+    <button class="btn secondary" id="rejectCookies" type="button">Rifiuta</button>
+    <button class="btn secondary" id="customizeCookies" type="button">Preferenze</button>
+    <button class="btn primary" id="acceptCookies" type="button">Accetta tutto</button>
+  </div>
+</div>
+
+<div class="cookie-modal" id="cookieModal" aria-hidden="true" hidden>
+  <div class="cookie-modal-panel" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle">
+    <button aria-label="Chiudi preferenze cookie" class="cookie-modal-close" id="closeCookieModal" type="button">×</button>
+    <h2 id="cookieModalTitle">Preferenze cookie</h2>
+    <p>Puoi modificare la scelta in qualsiasi momento dal link nel footer.</p>
+    <div class="cookie-option locked">
+      <div>
+        <strong>Necessari</strong>
+        <p>Servono per il funzionamento tecnico del sito e non possono essere disattivati.</p>
+      </div>
+      <span>Sempre attivi</span>
+    </div>
+    <label class="cookie-option">
+      <div>
+        <strong>Analytics</strong>
+        <p>Google Analytics 4 per statistiche aggregate su visite, click, form, calcolatore e galleria.</p>
+      </div>
+      <input id="analyticsConsent" type="checkbox" />
+    </label>
+    <label class="cookie-option">
+      <div>
+        <strong>Marketing</strong>
+        <p>TikTok Pixel e futuri strumenti pubblicitari. Attiva anche Google Tag Manager.</p>
+      </div>
+      <input id="marketingConsent" type="checkbox" />
+    </label>
+    <div class="cookie-modal-actions">
+      <button class="btn secondary" id="saveRejectCookies" type="button">Rifiuta</button>
+      <button class="btn primary" id="saveCookiePreferences" type="button">Salva preferenze</button>
+    </div>
+  </div>
+</div>
+
 <script>
-    const PRICE_PER_SQM = 80;
-    const MIN_BILLABLE_SQM = 1;
-    const WHATSAPP_NUMBER = '393204178026';
+  const PRICE_PER_SQM = 80;
+  const MIN_BILLABLE_SQM = 1;
+  const WHATSAPP_NUMBER = '393204178026';
+  const GTM_ID = 'GTM-TJSWCMD3';
+  const GA4_ID = 'G-4NVPNZHY9S';
+  const TIKTOK_PIXEL_ID = 'D9UU2MJC77UE58FDAJQG';
+  const CONSENT_KEY = 'stampa_murale_cookie_consent_v1';
 
-    function formatEuro(value) {
-      return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
-    }
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){ window.dataLayer.push(arguments); }
 
-    function formatSqm(value) {
-      return new Intl.NumberFormat('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
-    }
+  let activeConsent = { analytics: false, marketing: false };
+  let gtmLoaded = false;
+  let ga4DirectLoaded = false;
+  let calculatorTracked = false;
 
-    function updateEstimate() {
-      const widthCm = Number(document.getElementById('printWidth')?.value) || 100;
-      const heightCm = Number(document.getElementById('printHeight')?.value) || 100;
-
-      const realArea = Math.max((widthCm * heightCm) / 10000, 0);
-      const billableArea = Math.max(realArea, MIN_BILLABLE_SQM);
-      const estimatedPrice = billableArea * PRICE_PER_SQM;
-
-      const priceEl = document.getElementById('estimatedPrice');
-      const detailsEl = document.getElementById('estimatedDetails');
-      const whatsappEstimate = document.getElementById('whatsappEstimate');
-
-      if (priceEl) priceEl.textContent = formatEuro(estimatedPrice);
-      if (detailsEl) {
-        const minimumText = realArea < MIN_BILLABLE_SQM
-          ? ' — applicato minimo 1 m².'
-          : '';
-        detailsEl.textContent = `Area inserita: ${formatSqm(realArea)} m² — area calcolata: ${formatSqm(billableArea)} m²${minimumText}`;
-      }
-
-      if (whatsappEstimate) {
-        const message = `Ciao, vorrei un preventivo per una stampa su parete. Misure indicative: ${widthCm} x ${heightCm} cm. Stima vista sul sito: ${formatEuro(estimatedPrice)}. Posso inviare foto della parete?`;
-        whatsappEstimate.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-      }
-    }
-
-    document.getElementById('printWidth')?.addEventListener('input', updateEstimate);
-    document.getElementById('printHeight')?.addEventListener('input', updateEstimate);
-    updateEstimate();
-
-    function trackEvent(eventName) {
-      if (typeof gtag === 'function') {
-        gtag('event', eventName);
-      }
-    }
-
-    document.getElementById('whatsappHero')?.addEventListener('click', function () {
-      trackEvent('click_whatsapp_hero');
+  function applyGoogleConsent(consent) {
+    const analyticsGranted = consent.analytics ? 'granted' : 'denied';
+    const marketingGranted = consent.marketing ? 'granted' : 'denied';
+    gtag('consent', 'update', {
+      analytics_storage: analyticsGranted,
+      ad_storage: marketingGranted,
+      ad_user_data: marketingGranted,
+      ad_personalization: marketingGranted,
+      functionality_storage: 'granted',
+      security_storage: 'granted'
     });
+  }
 
-    document.getElementById('whatsappForm')?.addEventListener('click', function () {
-      trackEvent('click_whatsapp_form');
-    });
+  gtag('consent', 'default', {
+    analytics_storage: 'denied',
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    functionality_storage: 'granted',
+    security_storage: 'granted'
+  });
 
-    document.getElementById('googleForm')?.addEventListener('click', function () {
-      trackEvent('click_google_form');
-    });
+  function loadScript(src, id) {
+    if (id && document.getElementById(id)) return;
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = src;
+    if (id) script.id = id;
+    document.head.appendChild(script);
+  }
 
-    document.getElementById('whatsappEstimate')?.addEventListener('click', function () {
-      trackEvent('click_whatsapp_estimate');
-    });
-  
+  function loadGTM() {
+    if (gtmLoaded) return;
+    gtmLoaded = true;
+    window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+    loadScript('https://www.googletagmanager.com/gtm.js?id=' + encodeURIComponent(GTM_ID), 'gtm-script');
+  }
 
-    const lightbox = document.getElementById('imageLightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxClose = document.querySelector('.lightbox-close');
+  function loadGA4Direct() {
+    if (ga4DirectLoaded || gtmLoaded) return;
+    ga4DirectLoaded = true;
+    loadScript('https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA4_ID), 'ga4-direct-script');
+    gtag('js', new Date());
+    gtag('config', GA4_ID, { anonymize_ip: true });
+  }
 
-    function openLightbox(item) {
-      if (!lightbox || !lightboxImage || !lightboxCaption) return;
-      const img = item.querySelector('img');
-      const fullSrc = item.getAttribute('data-full') || img?.src;
-      const title = item.getAttribute('data-title') || item.querySelector('span')?.textContent || '';
-      lightboxImage.src = fullSrc;
-      lightboxImage.alt = img?.alt || title;
-      lightboxCaption.textContent = title;
-      lightbox.classList.add('active');
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('no-scroll');
-      lightboxClose?.focus();
+  function activateTracking(consent) {
+    activeConsent = { analytics: !!consent.analytics, marketing: !!consent.marketing };
+    if (activeConsent.marketing) activeConsent.analytics = true;
+    applyGoogleConsent(activeConsent);
+
+    if (activeConsent.marketing) {
+      loadGTM();
+      window.dataLayer.push({ event: 'marketing_consent_granted', tikTokPixelId: TIKTOK_PIXEL_ID });
+    } else if (activeConsent.analytics) {
+      loadGA4Direct();
+    }
+  }
+
+  function saveConsent(consent) {
+    const previousConsent = { analytics: !!activeConsent.analytics, marketing: !!activeConsent.marketing };
+    const normalized = { analytics: !!consent.analytics, marketing: !!consent.marketing, date: new Date().toISOString() };
+    if (normalized.marketing) normalized.analytics = true;
+    localStorage.setItem(CONSENT_KEY, JSON.stringify(normalized));
+
+    const revokedAnalytics = previousConsent.analytics && !normalized.analytics;
+    const revokedMarketing = previousConsent.marketing && !normalized.marketing;
+    const upgradedToMarketing = !previousConsent.marketing && normalized.marketing;
+    if ((ga4DirectLoaded || gtmLoaded) && (revokedAnalytics || revokedMarketing || (ga4DirectLoaded && upgradedToMarketing))) {
+      window.location.reload();
+      return;
     }
 
-    function closeLightbox() {
-      if (!lightbox || !lightboxImage) return;
-      lightbox.classList.remove('active');
-      lightbox.setAttribute('aria-hidden', 'true');
+    activateTracking(normalized);
+    window.dataLayer.push({ event: 'cookie_consent_update', analytics: normalized.analytics, marketing: normalized.marketing });
+    hideConsentUI();
+  }
+
+  function getSavedConsent() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(CONSENT_KEY));
+      if (saved && typeof saved === 'object') return { analytics: !!saved.analytics, marketing: !!saved.marketing };
+    } catch (error) {}
+    return null;
+  }
+
+  function showCookieBanner() {
+    document.getElementById('cookieBanner')?.removeAttribute('hidden');
+  }
+
+  function hideConsentUI() {
+    document.getElementById('cookieBanner')?.setAttribute('hidden', '');
+    closeCookieModal();
+  }
+
+  function openCookieModal() {
+    const modal = document.getElementById('cookieModal');
+    const analyticsInput = document.getElementById('analyticsConsent');
+    const marketingInput = document.getElementById('marketingConsent');
+    if (analyticsInput) analyticsInput.checked = !!activeConsent.analytics;
+    if (marketingInput) marketingInput.checked = !!activeConsent.marketing;
+    modal?.removeAttribute('hidden');
+    modal?.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+    document.getElementById('closeCookieModal')?.focus();
+  }
+
+  function closeCookieModal() {
+    const modal = document.getElementById('cookieModal');
+    modal?.setAttribute('hidden', '');
+    modal?.setAttribute('aria-hidden', 'true');
+    if (!document.getElementById('imageLightbox')?.classList.contains('active')) {
       document.body.classList.remove('no-scroll');
-      lightboxImage.src = '';
     }
+  }
 
-    document.querySelectorAll('.gallery-item').forEach(function (item) {
-      item.addEventListener('click', function () {
+  function formatEuro(value) {
+    return new Intl.NumberFormat('it-IT', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(value);
+  }
+
+  function formatSqm(value) {
+    return new Intl.NumberFormat('it-IT', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
+  }
+
+  function updateEstimate() {
+    const widthCm = Number(document.getElementById('printWidth')?.value) || 100;
+    const heightCm = Number(document.getElementById('printHeight')?.value) || 100;
+    const realArea = Math.max((widthCm * heightCm) / 10000, 0);
+    const billableArea = Math.max(realArea, MIN_BILLABLE_SQM);
+    const estimatedPrice = billableArea * PRICE_PER_SQM;
+    const priceEl = document.getElementById('estimatedPrice');
+    const detailsEl = document.getElementById('estimatedDetails');
+    const whatsappEstimate = document.getElementById('whatsappEstimate');
+
+    if (priceEl) priceEl.textContent = formatEuro(estimatedPrice);
+    if (detailsEl) {
+      const minimumText = realArea < MIN_BILLABLE_SQM ? ' — applicato minimo 1 m².' : '';
+      detailsEl.textContent = `Area inserita: ${formatSqm(realArea)} m² — area calcolata: ${formatSqm(billableArea)} m²${minimumText}`;
+    }
+    if (whatsappEstimate) {
+      const message = `Ciao, vorrei un preventivo per una stampa su parete. Misure indicative: ${widthCm} x ${heightCm} cm. Stima vista sul sito: ${formatEuro(estimatedPrice)}. Posso inviare foto della parete?`;
+      whatsappEstimate.href = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+    return { widthCm, heightCm, realArea, billableArea, estimatedPrice };
+  }
+
+  function trackEvent(eventName, params = {}) {
+    if (!activeConsent.analytics && !activeConsent.marketing) return;
+    const payload = Object.assign({ event: eventName }, params);
+    window.dataLayer.push(payload);
+    if (activeConsent.analytics && (ga4DirectLoaded || gtmLoaded) && typeof gtag === 'function') {
+      gtag('event', eventName, params);
+    }
+  }
+
+  document.getElementById('printWidth')?.addEventListener('input', function () {
+    const data = updateEstimate();
+    if (!calculatorTracked) {
+      calculatorTracked = true;
+      trackEvent('calculator_used', { area_mq: Number(data.realArea.toFixed(2)), estimated_price: data.estimatedPrice });
+    }
+  });
+
+  document.getElementById('printHeight')?.addEventListener('input', function () {
+    const data = updateEstimate();
+    if (!calculatorTracked) {
+      calculatorTracked = true;
+      trackEvent('calculator_used', { area_mq: Number(data.realArea.toFixed(2)), estimated_price: data.estimatedPrice });
+    }
+  });
+
+  updateEstimate();
+
+  document.addEventListener('click', function (event) {
+    const link = event.target.closest('a');
+    if (!link) return;
+    const href = link.href || '';
+    const label = (link.textContent || '').trim().replace(/\s+/g, ' ').slice(0, 90);
+    if (href.includes('wa.me/')) {
+      trackEvent('click_whatsapp', { link_text: label, link_url: href.split('?')[0] });
+    } else if (href.includes('docs.google.com/forms')) {
+      trackEvent('click_form_preventivo', { link_text: label });
+    }
+  });
+
+  const lightbox = document.getElementById('imageLightbox');
+  const lightboxImage = document.getElementById('lightboxImage');
+  const lightboxCaption = document.getElementById('lightboxCaption');
+  const lightboxClose = document.querySelector('.lightbox-close');
+
+  function openLightbox(item) {
+    if (!lightbox || !lightboxImage || !lightboxCaption) return;
+    const img = item.querySelector('img');
+    const fullSrc = item.getAttribute('data-full') || img?.src;
+    const title = item.getAttribute('data-title') || item.querySelector('span')?.textContent || '';
+    lightboxImage.src = fullSrc;
+    lightboxImage.alt = img?.alt || title;
+    lightboxCaption.textContent = title;
+    lightbox.classList.add('active');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('no-scroll');
+    lightboxClose?.focus();
+    trackEvent('open_gallery_image', { image_title: title, image_src: fullSrc });
+  }
+
+  function closeLightbox() {
+    if (!lightbox || !lightboxImage) return;
+    lightbox.classList.remove('active');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('no-scroll');
+    lightboxImage.src = '';
+  }
+
+  document.querySelectorAll('.gallery-item').forEach(function (item) {
+    item.addEventListener('click', function () { openLightbox(item); });
+    item.addEventListener('keydown', function (event) {
+      if (event.key === 'Enter' || event.key === ' ') {
+        event.preventDefault();
         openLightbox(item);
-      });
-      item.addEventListener('keydown', function (event) {
-        if (event.key === 'Enter' || event.key === ' ') {
-          event.preventDefault();
-          openLightbox(item);
-        }
-      });
+      }
     });
+  });
 
-    lightboxClose?.addEventListener('click', closeLightbox);
-    lightbox?.addEventListener('click', function (event) {
-      if (event.target === lightbox) {
-        closeLightbox();
-      }
-    });
-    document.addEventListener('keydown', function (event) {
-      if (event.key === 'Escape' && lightbox?.classList.contains('active')) {
-        closeLightbox();
-      }
-    });
+  lightboxClose?.addEventListener('click', closeLightbox);
+  lightbox?.addEventListener('click', function (event) { if (event.target === lightbox) closeLightbox(); });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape') {
+      if (lightbox?.classList.contains('active')) closeLightbox();
+      if (!document.getElementById('cookieModal')?.hasAttribute('hidden')) closeCookieModal();
+    }
+  });
+
+  document.getElementById('acceptCookies')?.addEventListener('click', function () { saveConsent({ analytics: true, marketing: true }); });
+  document.getElementById('rejectCookies')?.addEventListener('click', function () { saveConsent({ analytics: false, marketing: false }); });
+  document.getElementById('customizeCookies')?.addEventListener('click', openCookieModal);
+  document.getElementById('openCookiePreferencesFooter')?.addEventListener('click', openCookieModal);
+  document.getElementById('closeCookieModal')?.addEventListener('click', closeCookieModal);
+  document.getElementById('saveRejectCookies')?.addEventListener('click', function () { saveConsent({ analytics: false, marketing: false }); });
+  document.getElementById('saveCookiePreferences')?.addEventListener('click', function () {
+    const analytics = document.getElementById('analyticsConsent')?.checked || false;
+    const marketing = document.getElementById('marketingConsent')?.checked || false;
+    saveConsent({ analytics, marketing });
+  });
+  document.getElementById('marketingConsent')?.addEventListener('change', function (event) {
+    if (event.target.checked) {
+      const analyticsInput = document.getElementById('analyticsConsent');
+      if (analyticsInput) analyticsInput.checked = true;
+    }
+  });
+
+  const savedConsent = getSavedConsent();
+  if (savedConsent) {
+    activateTracking(savedConsent);
+  } else {
+    showCookieBanner();
+  }
 </script>
 </body>
 </html>
