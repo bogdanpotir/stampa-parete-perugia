@@ -25,17 +25,19 @@
 <meta name="twitter:image" content="https://stampamurale.it/pics/preview.jpg.png"/>
 
 <link href="style.css?v=20" rel="stylesheet"/>
-<link href="ux.css?v=2" rel="stylesheet"/>
+<link href="ux.css?v=3" rel="stylesheet"/>
 </head>
-<body class="landing-page">
+<body class="landing-page" id="top">
 <header class="hero">
 <nav class="nav">
-<a class="logo" href="/" aria-label="StampaMurale home">StampaMurale</a>
+<a class="logo" href="#top" aria-label="StampaMurale home"><svg class="logo-icon" aria-hidden="true" viewBox="0 0 46 38" focusable="false"><path d="M4 34V17L22 4l18 13v17"/><path d="M4 17 22 4l18 13"/><path d="M17 34V23h10v11"/></svg><span class="logo-wordmark"><strong>Stampa<span>Murale</span></strong><small>PERUGIA · UMBRIA</small></span></a>
 <div class="nav-links" aria-label="Navigazione principale">
-<a href="#esempi">Esempi</a>
-<a href="#superfici">Superfici</a>
-<a href="#calcolatore">Prezzi</a>
+<a href="#top">Home</a>
 <a href="#come-funziona">Come funziona</a>
+<a href="#esempi">Esempi</a>
+<a href="#calcolatore">Prezzi</a>
+<a href="#faq">FAQ</a>
+<a href="#preventivo">Contatti</a>
 </div>
 <a class="nav-cta" href="#preventivo">Prenota una valutazione</a>
 </nav>
@@ -61,33 +63,11 @@
 <main>
 <section class="metrics-strip" aria-label="Punti chiave del servizio">
 <div class="metrics-grid">
-<div class="metric"><strong>Stampa diretta</strong><span>La grafica diventa parte della parete.</span></div>
-<div class="metric"><strong>Niente pellicole</strong><span>Senza adesivi, carta da parati o pannelli applicati.</span></div>
-<div class="metric"><strong>Formato su misura</strong><span>La dimensione si adatta allo spazio da decorare.</span></div>
-<div class="metric"><strong>Da €80/m²</strong><span>Una prima stima chiara prima di decidere.</span></div>
+<div class="metric"><span class="metric-icon" aria-hidden="true">✧</span><span class="metric-copy"><strong>Stampa diretta</strong><small>La grafica diventa parte della parete.</small></span></div>
+<div class="metric"><span class="metric-icon" aria-hidden="true">⌁</span><span class="metric-copy"><strong>Senza adesivi</strong><small>Niente pellicole, carta da parati o giunte.</small></span></div>
+<div class="metric"><span class="metric-icon" aria-hidden="true">✦</span><span class="metric-copy"><strong>Grafica su misura</strong><small>Immagini, loghi e colori per il tuo spazio.</small></span></div>
+<div class="metric"><span class="metric-icon" aria-hidden="true">●</span><span class="metric-copy"><strong>Perugia e Umbria</strong><small>Valutazioni iniziali su prenotazione.</small></span></div>
 </div>
-</section>
-
-<section class="section intro">
-<div class="section-heading">
-<p class="eyebrow">Che cos'è</p>
-<h2>Una decorazione stampata direttamente sul muro</h2>
-</div>
-<p class="large-text">La grafica diventa parte dello spazio: scegli un’immagine, un logo o un’idea da sviluppare. La fattibilità viene valutata in base alla superficie e all’accessibilità della parete.</p>
-</section>
-
-<section class="section surfaces" id="superfici">
-<div class="section-heading split-heading">
-<div><p class="eyebrow">Dove possiamo intervenire</p><h2>Ogni parete parte da una verifica.</h2></div>
-<p class="section-description">La fattibilità cambia in base a superficie, planarità e accessibilità. Durante la valutazione capiamo insieme qual è la soluzione adatta.</p>
-</div>
-<div class="surface-grid">
-<article class="surface-card surface-wall"><span>Parete verniciata</span><small>La base più comune per una stampa integrata.</small></article>
-<article class="surface-card surface-concrete"><span>Cemento e superfici materiche</span><small>Da valutare in base a finitura e regolarità.</small></article>
-<article class="surface-card surface-brick"><span>Mattone e muratura</span><small>La texture viene verificata prima del progetto.</small></article>
-<article class="surface-card surface-wood"><span>Legno e pannelli</span><small>Compatibilità da confermare per ogni supporto.</small></article>
-</div>
-<p class="surface-note">Le immagini sono esempi di superfici: la compatibilità definitiva viene sempre confermata dopo foto o sopralluogo.</p>
 </section>
 
 <section class="section examples" id="esempi">
@@ -95,6 +75,7 @@
 <p class="eyebrow">Esempi dimostrativi</p>
 <h2>Idee di applicazione</h2>
 <p class="section-description">Queste immagini sono simulazioni dimostrative, non lavori già realizzati.</p>
+<a class="section-link" href="#esempi">Vedi tutti gli esempi →</a>
 </div>
 <div class="gallery-filters" role="tablist" aria-label="Filtra gli esempi">
 <button class="filter-button is-active" type="button" role="tab" aria-selected="true" data-filter="all">Tutti</button>
@@ -114,16 +95,41 @@
 </div>
 </section>
 
-<section class="section cards-section">
+<section class="section comparison">
 <div class="section-heading">
-<p class="eyebrow">Per chi è pensata</p>
-<h2>Una parete, molte possibilità.</h2>
+<p class="eyebrow">Perché stampa diretta</p>
+<h2>Una soluzione resistente, pratica e professionale.</h2>
+<p class="section-description">La grafica entra nello spazio senza aggiungere uno strato applicato alla parete.</p>
 </div>
-<div class="cards audience-grid">
-<article class="card audience-card"><span class="card-index">01</span><h3>Casa</h3><p>Camerette, soggiorni e pareti da personalizzare.</p><a href="#esempi">Vedi idee →</a></article>
-<article class="card featured-card audience-card"><span class="card-index">02</span><h3>Aziende e locali</h3><p>Ristoranti, negozi, uffici, palestre e showroom.</p><a href="#preventivo">Parliamone →</a></article>
-<article class="card audience-card"><span class="card-index">03</span><h3>Hotel e ristorazione</h3><p>Reception, camere, agriturismi e B&amp;B.</p><a href="#esempi">Vedi idee →</a></article>
-<article class="card audience-card"><span class="card-index">04</span><h3>Scuole e spazi educativi</h3><p>Aule, corridoi, biblioteche e sale gioco.</p><a href="#preventivo">Valuta lo spazio →</a></article>
+<div class="benefit-showcase">
+<article class="benefit-card"><div class="benefit-copy"><h3>Niente bordi applicati</h3><p>La grafica viene stampata direttamente sulla parete, senza effetto pellicola o bordo applicato visibile.</p></div><figure><img loading="lazy" decoding="async" src="pics/niente-bordi-applicati.jpg.png" alt="Dettaglio di adesivo murale con bordo applicato visibile"/><figcaption class="image-caption comparison-caption">Confronto: adesivo o carta da parati, non stampa diretta. Simulazione dimostrativa.</figcaption></figure></article>
+<article class="benefit-card"><div class="benefit-copy"><h3>Niente pellicole da staccare</h3><p>Non ci sono adesivi o bordi che possono sollevarsi: utile in scuole, asili, corridoi, locali e zone molto frequentate.</p></div><figure><img loading="lazy" decoding="async" src="pics/niente-pellicole-da-staccare.jpg.png" alt="Mano che prova a staccare una pellicola adesiva in un corridoio scolastico"/><figcaption class="image-caption comparison-caption">Confronto: adesivo o carta da parati, non stampa diretta. Simulazione dimostrativa.</figcaption></figure></article>
+<article class="benefit-card"><div class="benefit-copy"><h3>Niente giunte visibili</h3><p>Una soluzione ideale per immagini grandi, loghi e pareti decorative dove l'effetto finale deve essere continuo e pulito.</p></div><figure><img loading="lazy" decoding="async" src="pics/niente-giunte-visibili.jpg.png" alt="Carta da parati in un locale con una giunta verticale visibile"/><figcaption class="image-caption comparison-caption">Confronto: adesivo o carta da parati, non stampa diretta. Simulazione dimostrativa.</figcaption></figure></article>
+</div>
+</section>
+
+<section class="section surfaces" id="superfici">
+<div class="section-heading split-heading">
+<div><p class="eyebrow">Dove possiamo intervenire</p><h2>Ogni parete parte da una verifica.</h2></div>
+<p class="section-description">La fattibilità cambia in base a superficie, planarità e accessibilità. Durante la valutazione capiamo insieme qual è la soluzione adatta.</p>
+</div>
+<div class="surface-grid">
+<article class="surface-card surface-wall"><span>Parete verniciata</span><small>La base più comune per una stampa integrata.</small></article>
+<article class="surface-card surface-concrete"><span>Cemento</span><small>La finitura viene verificata prima del progetto.</small></article>
+<article class="surface-card surface-brick"><span>Mattone</span><small>La texture viene valutata insieme.</small></article>
+<article class="surface-card surface-plaster"><span>Intonaco</span><small>Compatibilità da confermare per ogni parete.</small></article>
+<article class="surface-card surface-wood"><span>Legno</span><small>Supporti e pannelli da verificare.</small></article>
+<article class="surface-card surface-other"><span>Altre superfici</span><small>Raccontaci il tuo spazio.</small></article>
+</div>
+<p class="surface-note">Le immagini sono esempi di superfici: la compatibilità definitiva viene sempre confermata dopo foto o sopralluogo.</p>
+</section>
+
+<section class="section process" id="come-funziona">
+<div class="section-heading"><p class="eyebrow">Come funziona</p><h2>La prima valutazione, in tre passaggi</h2></div>
+<div class="steps">
+<div class="step"><span>1</span><p><strong>Invia la richiesta.</strong> Indica le misure e la tua idea; puoi inviare le foto su WhatsApp.</p></div>
+<div class="step"><span>2</span><p><strong>Concordiamo un appuntamento.</strong> Valutazioni dal 29 ottobre 2026, con un solo appuntamento al giorno. Data e orario da confermare.</p></div>
+<div class="step"><span>3</span><p><strong>Valutiamo parete e costo.</strong> Ricevi una prima stima; eventuale sopralluogo e stampa si concordano separatamente.</p></div>
 </div>
 </section>
 
@@ -145,32 +151,9 @@
 </div>
 </section>
 
-<section class="section process" id="come-funziona">
-<div class="section-heading"><p class="eyebrow">Come funziona</p><h2>La prima valutazione, in tre passaggi</h2></div>
-<div class="steps">
-<div class="step"><span>1</span><p><strong>Invia la richiesta.</strong> Indica le misure e la tua idea; puoi inviare le foto su WhatsApp.</p></div>
-<div class="step"><span>2</span><p><strong>Concordiamo un appuntamento.</strong> Valutazioni dal 29 ottobre 2026, con un solo appuntamento al giorno. Data e orario da confermare.</p></div>
-<div class="step"><span>3</span><p><strong>Valutiamo parete e costo.</strong> Ricevi una prima stima; eventuale sopralluogo e stampa si concordano separatamente.</p></div>
-</div>
-</section>
-
 <section class="section form-section" id="preventivo">
 <div class="form-copy"><p class="eyebrow">Prenotazioni aperte</p><h2>Prenota la tua valutazione iniziale</h2><p>Dal <strong>29 ottobre 2026</strong>, un appuntamento al giorno per valutare la parete, la tua idea e una prima stima del costo.</p><p>Scegli una disponibilità nel calendario e inserisci nome, email e telefono. La prenotazione riguarda la valutazione iniziale e non comprende la stampa.</p><a class="btn primary full" href="https://calendar.app.google/FyBGswLg36JMfPw3A" id="calendarBooking" rel="noopener" target="_blank">Scegli data e orario</a><a class="btn secondary full" href="https://wa.me/393204178026?text=Ciao%2C%20vorrei%20prenotare%20una%20valutazione%20iniziale%20e%20una%20stima%20del%20costo%20dal%2029%20ottobre%202026.%20Possiamo%20concordare%20data%20e%20orario%3F%20Posso%20inviare%20foto%20e%20misure%20della%20parete." id="whatsappForm" rel="noopener" target="_blank">Preferisco WhatsApp</a></div>
 <div class="form-box"><h3>Preferisci il modulo?</h3><p>Lascia i tuoi contatti e descrivi la parete. Se hai usato il calcolatore, ritroverai le misure già compilate. Le foto si inviano su WhatsApp.</p><a class="btn secondary full" href="https://docs.google.com/forms/d/e/1FAIpQLSeVzuS1ifXUKh8f2-UYChsx437u9VIwvZ7YnH1cx9hwiAvC7g/viewform?usp=pp_url&amp;entry.1494247680=Vorrei%20prenotare%20una%20valutazione%20iniziale%20e%20una%20stima%20del%20costo%20dal%2029%20ottobre%202026.%20Data%20e%20orario%20da%20concordare.%20La%20mia%20idea%3A%20" id="googleForm" rel="noopener" target="_blank">Apri richiesta di valutazione</a><p class="privacy-inline">Useremo i dati per rispondere e concordare la valutazione. Leggi la <a href="privacy.html">Privacy Policy</a>.</p><div class="contact-person"><h3>Il tuo referente</h3><p><strong>Bogdan Potirniche</strong><br>StampaMurale · Corciano (PG)<br><a href="tel:+393204178026">320 417 8026</a></p></div></div>
-</section>
-
-<section class="section comparison">
-<div class="section-heading">
-<p class="eyebrow">Perché considerarla</p>
-<h2>Una soluzione diversa da adesivi e carta da parati</h2>
-</div>
-<div class="benefit-showcase">
-<article class="benefit-card"><div class="benefit-copy"><h3>Niente bordi applicati</h3><p>La grafica viene stampata direttamente sulla parete, senza effetto pellicola o bordo applicato visibile.</p></div><figure><img loading="lazy" decoding="async" src="pics/niente-bordi-applicati.jpg.png" alt="Dettaglio di adesivo murale con bordo applicato visibile"/><figcaption class="image-caption comparison-caption">Confronto: adesivo o carta da parati, non stampa diretta. Simulazione dimostrativa.</figcaption></figure></article>
-<article class="benefit-card"><div class="benefit-copy"><h3>Niente pellicole da staccare</h3><p>Non ci sono adesivi o bordi che possono sollevarsi: utile in scuole, asili, corridoi, locali e zone molto frequentate.</p></div><figure><img loading="lazy" decoding="async" src="pics/niente-pellicole-da-staccare.jpg.png" alt="Mano che prova a staccare una pellicola adesiva in un corridoio scolastico"/><figcaption class="image-caption comparison-caption">Confronto: adesivo o carta da parati, non stampa diretta. Simulazione dimostrativa.</figcaption></figure></article>
-<article class="benefit-card"><div class="benefit-copy"><h3>Niente giunte visibili</h3><p>Una soluzione ideale per immagini grandi, loghi e pareti decorative dove l'effetto finale deve essere continuo e pulito.</p></div><figure><img loading="lazy" decoding="async" src="pics/niente-giunte-visibili.jpg.png" alt="Carta da parati in un locale con una giunta verticale visibile"/><figcaption class="image-caption comparison-caption">Confronto: adesivo o carta da parati, non stampa diretta. Simulazione dimostrativa.</figcaption></figure></article>
-<article class="benefit-card"><div class="benefit-copy"><h3>Grafica personalizzata</h3><p>La decorazione può essere adattata allo spazio, allo stile e alla persona: dalla camera di una bambina a un locale, ufficio o scuola.</p></div><figure><img loading="lazy" decoding="async" src="pics/grafica-personalizzata.jpg.png" alt="Cameretta personalizzata con murale unicorno, arcobaleno e nome Giulia"/><figcaption class="image-caption">Simulazione dimostrativa · Non è un lavoro già realizzato.</figcaption></figure></article>
-<article class="benefit-card"><div class="benefit-copy"><h3>Effetto professionale</h3><p>Un risultato adatto anche ad ambienti ufficiali, reception, scuole, uffici e locali dove l'immagine deve essere curata e riconoscibile.</p></div><figure><img loading="lazy" decoding="async" src="pics/effetto-professionale.jpg.png" alt="Stampante verticale su rail che stampa logo e nome di un liceo in una lobby"/><figcaption class="image-caption">Simulazione dimostrativa · Non è un lavoro già realizzato.</figcaption></figure></article>
-</div>
 </section>
 
 <section class="section faq" id="faq">
@@ -184,6 +167,19 @@
 <details class="faq-item"><summary>Su quali pareti si può stampare?</summary><p>La fattibilità dipende da superficie, planarità, accessibilità e stato della parete. Per questo il prezzo e la realizzazione vanno sempre confermati dopo verifica tecnica.</p></details>
 <details class="faq-item"><summary>È adatta anche per scuole e asili?</summary><p>Può essere interessante per aule, corridoi, sale gioco e spazi educativi perché non ci sono adesivi o pellicole da staccare. Prima della realizzazione vanno comunque verificate parete, accessibilità, utilizzo dell'ambiente e schede tecniche dei materiali.</p></details>
 <details class="faq-item"><summary>Lavorate solo a Perugia?</summary><p>Le valutazioni sono disponibili dal 29 ottobre 2026 per Perugia e Umbria, su prenotazione. Puoi scegliere data e orario nella pagina Google Calendar; eventuali interventi fuori zona si valutano caso per caso.</p></details>
+</div>
+</section>
+
+<section class="section cards-section">
+<div class="section-heading">
+<p class="eyebrow">Per chi è pensata</p>
+<h2>Una parete, molte possibilità.</h2>
+</div>
+<div class="cards audience-grid">
+<article class="card audience-card"><span class="card-index">01</span><h3>Casa</h3><p>Camerette, soggiorni e pareti da personalizzare.</p><a href="#esempi">Vedi idee →</a></article>
+<article class="card featured-card audience-card"><span class="card-index">02</span><h3>Aziende e locali</h3><p>Ristoranti, negozi, uffici, palestre e showroom.</p><a href="#preventivo">Parliamone →</a></article>
+<article class="card audience-card"><span class="card-index">03</span><h3>Hotel e ristorazione</h3><p>Reception, camere, agriturismi e B&amp;B.</p><a href="#esempi">Vedi idee →</a></article>
+<article class="card audience-card"><span class="card-index">04</span><h3>Scuole e spazi educativi</h3><p>Aule, corridoi, biblioteche e sale gioco.</p><a href="#preventivo">Valuta lo spazio →</a></article>
 </div>
 </section>
 
