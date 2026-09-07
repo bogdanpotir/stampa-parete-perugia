@@ -1,49 +1,67 @@
-STAMPA SU PARETE PERUGIA - VERSIONE V18
+STAMPAMURALE - REBRAND E MIGRAZIONE CLOUDFLARE
 
-Contenuto dello ZIP:
-- index.html
-- style.css
-- privacy.html
-- cookie.html
-- cartella pics con immagini del sito
+Dominio principale previsto:
+https://stampamurale.it
 
-Aggiornamenti inclusi:
-1. Google Tag Manager: GTM-TJSWCMD3
-2. Google Analytics 4: G-4NVPNZHY9S
-3. TikTok Pixel: D9UU2MJC77UE58FDAJQG
-4. Meta Pixel non inserito in questa versione.
-5. Banner consenso con Accetta tutto / Rifiuta / Preferenze.
-6. Privacy Policy aggiornata con:
-   - Titolare: Bogdan Potirniche
-   - Comune: Corciano (PG), Italia
-   - Email privacy: baxx99@gmail.com
-   - sito gestito da privato per studio di mercato e valutazione preliminare della domanda.
-7. Cookie Policy aggiornata.
-8. Eventi tracciabili:
-   - click_whatsapp
-   - click_form_preventivo
-   - calculator_used
-   - open_gallery_image
-9. Preview social impostata su pics/preview.jpg.png.
-10. Hero definitiva mantenuta in pics/hero-parete.jpg.png.
+Architettura:
+- Registrar dominio: OVHcloud
+- DNS / CDN / HTTPS: Cloudflare
+- Hosting sito: Cloudflare Pages
+- Codice sorgente e versioni: GitHub
+- Email dominio: OVHcloud / Zimbra
 
-Come caricare su GitHub:
-- Caricare/sostituire index.html
-- Caricare/sostituire style.css
-- Caricare privacy.html
-- Caricare cookie.html
-- Caricare/sostituire tutta la cartella pics se necessario
+Ramo di lavoro:
+stampamurale-rebrand
 
-Nota tecnica:
-- Il banner blocca analytics e marketing finché l'utente non sceglie.
-- Se l'utente accetta solo analytics, il sito carica Google Analytics 4 direttamente.
-- Se l'utente accetta marketing, il sito carica Google Tag Manager e può attivare TikTok Pixel.
-- Per testare GTM/TikTok dopo il caricamento su GitHub, aprire il sito, cliccare Accetta tutto e poi verificare in Google Tag Manager/TikTok Events Manager.
+Obiettivo:
+Preparare la migrazione del sito esistente “Stampa su Parete Perugia” al brand “StampaMurale”, mantenendo il posizionamento locale Perugia / Umbria nei testi SEO e nel contenuto.
 
-Nota privacy:
-- Testo predisposto per una landing page privata di studio mercato, non per un'attività commerciale già formalizzata.
-- Prima dell'uso commerciale definitivo aggiungere eventuale Partita IVA, PEC, indirizzo completo e far verificare le policy da un consulente.
+Da mantenere:
+- Calcolatore prezzo €80/m² con minimo €80
+- Google Form preventivo
+- WhatsApp 3204178026
+- Galleria e lightbox
+- Privacy/cookie consent
+- Google Tag Manager: GTM-TJSWCMD3
+- Google Analytics 4: G-4NVPNZHY9S
+- TikTok Pixel: D9UU2MJC77UE58FDAJQG
+- Meta Pixel non inserito
+- Simulazioni grafiche chiaramente indicate come esempi dimostrativi
+- Stato attuale: sito gestito da privato per studio di mercato e valutazione preliminare della domanda
 
-Google Form:
-Si consiglia di aggiungere nel Google Form una checkbox obbligatoria con testo simile:
-"Ho letto l'informativa privacy e acconsento al trattamento dei dati inseriti per essere ricontattato in merito alla mia richiesta."
+Aggiornamenti Cloudflare:
+- Privacy Policy aggiornata per Cloudflare Pages, GitHub e OVHcloud
+- Cookie Policy aggiornata con riferimento a Cloudflare
+- robots.txt predisposto per il nuovo dominio
+- sitemap.xml predisposta per stampamurale.it
+- _headers predisposto per header di sicurezza di base su Cloudflare Pages
+- favicon.svg predisposta per il nuovo brand
+
+Pubblicazione Cloudflare Pages:
+1. Collegare il repository bogdanpotir/stampa-parete-perugia a Cloudflare Pages.
+2. Branch di produzione finale: main, dopo approvazione del rebrand.
+3. Framework preset: None / static HTML.
+4. Build command: lasciare vuoto.
+5. Build output directory: / oppure . a seconda dell'interfaccia Cloudflare.
+6. Dopo il deploy su *.pages.dev, verificare tutte le pagine e i link.
+7. Collegare il dominio personalizzato stampamurale.it.
+8. Collegare anche www.stampamurale.it e impostare il redirect verso stampamurale.it.
+9. Verificare HTTPS, redirect, MX email OVH, SPF e successivamente DKIM/DMARC.
+
+Nota importante:
+Non eliminare o modificare i record MX della posta OVH presenti in Cloudflare:
+- mx1.mail.ovh.net priorità 1
+- mx2.mail.ovh.net priorità 5
+- mx3.mail.ovh.net priorità 100
+SPF attuale:
+v=spf1 include:mx.ovh.com -all
+
+Prima della pubblicazione definitiva:
+- aggiornare index.html con brand StampaMurale
+- aggiornare title/meta/Open Graph/Twitter/canonical sul nuovo dominio
+- verificare che pics/preview.jpg.png sia correttamente raggiungibile
+- verificare tutte le immagini e il responsive mobile
+- verificare il banner cookie
+- testare GA4/GTM/TikTok solo dopo consenso
+- verificare Google Form e WhatsApp
+- valutare DKIM e DMARC per l'email @stampamurale.it
