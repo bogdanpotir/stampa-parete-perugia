@@ -68,7 +68,7 @@
 
 /* V20 - visual direction premium, editorial and image-first */
 .landing-page {
-  --bg: #f7f7f4;
+  --bg: #ffffff;
   --bg-soft: #eef0ed;
   --text: #141615;
   --muted: #626662;
@@ -333,7 +333,8 @@
 .landing-page .note { max-width: 500px; margin-top: 16px; font-size: .78rem; }
 .landing-page .quick-links { display: none; }
 .landing-page .hero-visual { min-width: 0; padding: 0; border-radius: 0; background: #f1f0eb; box-shadow: none; }
-.landing-page .hero-image { width: 100%; height: clamp(380px, 38vw, 540px); min-height: 380px; border-radius: 0; object-position: center; }
+.landing-page .hero-visual { display: flex; flex-direction: column; background: #ffffff; }
+.landing-page .hero-image { flex: 1 1 auto; width: 100%; height: auto; min-height: 0; border-radius: 0; object-position: center; object-fit: cover; }
 .landing-page .hero-visual .image-caption { margin: 0; padding: 7px 12px; color: #565750; background: #f0f0eb; font-size: .7rem; text-align: right; }
 
 .landing-page .metrics-strip { background: #fff; color: var(--text); border-bottom: 1px solid #e6e8e5; padding: 0 clamp(18px, 4vw, 28px); }
