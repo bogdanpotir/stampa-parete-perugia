@@ -38,15 +38,16 @@ Aggiornamenti Cloudflare:
 - favicon.svg predisposta per il nuovo brand
 
 Pubblicazione Cloudflare Pages:
-1. Collegare il repository bogdanpotir/stampa-parete-perugia a Cloudflare Pages.
+1. Repository bogdanpotir/stampa-parete-perugia collegato a Cloudflare Pages.
 2. Branch di produzione finale: main, dopo approvazione del rebrand.
 3. Framework preset: None / static HTML.
-4. Build command: lasciare vuoto.
-5. Build output directory: / oppure . a seconda dell'interfaccia Cloudflare.
-6. Dopo il deploy su *.pages.dev, verificare tutte le pagine e i link.
-7. Collegare il dominio personalizzato stampamurale.it.
-8. Collegare anche www.stampamurale.it e impostare il redirect verso stampamurale.it.
-9. Verificare HTTPS, redirect, MX email OVH, SPF e successivamente DKIM/DMARC.
+4. Build command: exit 0.
+5. Build output directory: .
+6. Deploy iniziale production completato su stampamurale.pages.dev.
+7. Preview branch stampamurale-rebrand attivata con questo commit.
+8. Dopo verifica della preview, collegare il dominio personalizzato stampamurale.it.
+9. Collegare anche www.stampamurale.it e impostare il redirect verso stampamurale.it.
+10. Verificare HTTPS, redirect, MX email OVH, SPF e successivamente DKIM/DMARC.
 
 Nota importante:
 Non eliminare o modificare i record MX della posta OVH presenti in Cloudflare:
