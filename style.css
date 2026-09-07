@@ -1731,3 +1731,31 @@ span {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================================
+   V19 - Hero desktop più equilibrata per StampaMurale
+   ========================================================= */
+@media (min-width: 1101px) {
+  .hero-content {
+    max-width: 1280px;
+    grid-template-columns: minmax(0, 1.12fr) minmax(440px, 0.88fr);
+    gap: 46px;
+  }
+
+  .nav {
+    max-width: 1280px;
+  }
+
+  .hero-text {
+    min-width: 0;
+  }
+
+  .hero-text h1 {
+    max-width: 760px;
+    font-size: clamp(3.6rem, 4.6vw, 4.75rem);
+    line-height: 0.98;
+    letter-spacing: -0.055em;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
