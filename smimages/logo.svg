@@ -1,1 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 110" role="img" aria-labelledby="t d"><title id="t">StampaMurale</title><desc id="d">Logo StampaMurale</desc><defs><linearGradient id="g" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffad00"/><stop offset=".38" stop-color="#ff136f"/><stop offset=".7" stop-color="#d30ad5"/><stop offset="1" stop-color="#0dbbff"/></linearGradient></defs><rect x="8" y="10" width="82" height="82" fill="none" stroke="url(#g)" stroke-width="10"/><path d="M18 28v54h54C42 82 18 58 18 28Z" fill="url(#g)" opacity=".16"/><text x="112" y="61" font-family="Montserrat,Arial,sans-serif" font-size="52" font-weight="600" fill="#303030">Stampa<tspan fill="#ff176f">Murale</tspan></text><text x="114" y="88" font-family="Montserrat,Arial,sans-serif" font-size="15" font-weight="600" letter-spacing="5" fill="#303030">PERUGIA · UMBRIA</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 120" role="img" aria-labelledby="title desc">
+  <title id="title">StampaMurale</title>
+  <desc id="desc">Logo StampaMurale con simbolo infinito e dicitura Perugia Umbria</desc>
+  <defs>
+    <linearGradient id="smGradient" x1="18" y1="26" x2="212" y2="94" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E85C8A"/>
+      <stop offset="0.34" stop-color="#D94CB8"/>
+      <stop offset="0.62" stop-color="#7C3FA3"/>
+      <stop offset="1" stop-color="#0AA9FE"/>
+    </linearGradient>
+    <mask id="crossCut">
+      <rect width="230" height="120" fill="white"/>
+      <path d="M82 35 C101 45 118 64 140 88" fill="none" stroke="black" stroke-width="31" stroke-linecap="round"/>
+    </mask>
+    <filter id="crossShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2.2" flood-color="#452568" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+  <g transform="translate(4 0)">
+    <path d="M22 60 C22 28 52 18 77 31 C92 39 105 54 119 69 C139 91 155 101 177 96 C201 91 214 73 210 55 C206 37 191 25 174 27 C158 29 146 41 132 56 L104 86 C86 104 55 104 35 88 C26 81 22 71 22 60" fill="none" stroke="url(#smGradient)" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" mask="url(#crossCut)"/>
+    <path d="M82 35 C101 45 118 64 140 88" fill="none" stroke="url(#smGradient)" stroke-width="25" stroke-linecap="round" filter="url(#crossShadow)"/>
+  </g>
+  <text x="238" y="62" font-family="Montserrat, Arial, Helvetica, sans-serif" font-size="48" font-weight="700" letter-spacing="-1.8" fill="#20242D">StampaMurale</text>
+  <text x="241" y="91" font-family="Montserrat, Arial, Helvetica, sans-serif" font-size="14" font-weight="600" letter-spacing="5.3" fill="#666B75">PERUGIA · UMBRIA</text>
+</svg>
