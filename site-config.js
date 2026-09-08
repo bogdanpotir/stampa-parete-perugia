@@ -6,7 +6,7 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
   document.head.appendChild(link);
   var dots=document.createElement('link');
   dots.rel='stylesheet';
-  dots.href='dots.css?v=2';
+  dots.href='dots.css?v=3';
   document.head.appendChild(dots);
   var themeMeta=document.querySelector('meta[name="theme-color"]');
   if(themeMeta) themeMeta.setAttribute('content','#E85C8A');
