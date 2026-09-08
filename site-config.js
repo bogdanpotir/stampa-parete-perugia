@@ -99,6 +99,22 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
     }
     addFormPrivacyNotice(document.querySelector('.price-side .price-actions')?.parentElement);
     addFormPrivacyNotice(document.querySelector('.booking-actions'));
+
+    /* Punto 14: condizioni chiare della valutazione preliminare */
+    var priceSide=document.querySelector('.price-side');
+    if(priceSide && !priceSide.querySelector('.preliminary-conditions')){
+      var priceIntro=priceSide.querySelector('.price-big + p');
+      if(priceIntro){
+        priceIntro.textContent='Stima indicativa della sola stampa, con minimo indicativo di €80. Il valore mostrato dal calcolatore non costituisce un preventivo definitivo né un’offerta commerciale. Eventuali trasferta, preparazione o trattamento della parete, adattamento della grafica e altre lavorazioni vengono valutati separatamente.';
+      }
+      var conditions=document.createElement('p');
+      conditions.className='preliminary-conditions';
+      conditions.style.cssText='margin:16px 0 0;font-size:13px;line-height:1.55;color:inherit;opacity:.9;';
+      conditions.innerHTML='<strong>Fase attuale:</strong> il sito è utilizzato per studio di mercato e valutazioni preliminari. Non è possibile concludere acquisti o effettuare pagamenti tramite il sito. Le richieste sono gratuite e non vincolanti, non costituiscono ordine o contratto e non prevedono caparre o penali di cancellazione. L’eventuale rapporto commerciale sarà definito solo dopo l’avvio dell’attività, con conferma separata di prezzo, condizioni, fattibilità e data.';
+      var actions=priceSide.querySelector('.price-actions');
+      if(actions) actions.insertAdjacentElement('beforebegin',conditions);
+      else priceSide.appendChild(conditions);
+    }
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhancePage);
   else enhancePage();
