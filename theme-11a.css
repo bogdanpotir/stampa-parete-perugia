@@ -177,6 +177,35 @@
   outline:2px solid transparent;
 }
 
+/* Punto 18: accessibilità da tastiera e focus visibile */
+.skip-link{
+  position:fixed;
+  top:10px;
+  left:10px;
+  z-index:1000;
+  padding:10px 14px;
+  background:#fff;
+  color:#171c27;
+  border:2px solid #171c27;
+  text-decoration:none;
+  font-weight:700;
+  transform:translateY(-180%);
+  transition:transform .18s ease;
+}
+.skip-link:focus{
+  transform:translateY(0);
+}
+:where(a,button,input,summary,[tabindex]):focus-visible{
+  outline:3px solid #005fcc!important;
+  outline-offset:3px!important;
+}
+.lightbox-close,
+.cookie-close,
+.cookie-banner-close{
+  min-width:44px;
+  min-height:44px;
+}
+
 @media(max-width:1100px){
   .site-header{height:94px!important}
   .brand.brand-lockup{min-width:430px;gap:14px}
@@ -198,5 +227,7 @@
 }
 
 @media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  .skip-link{transition:none!important}
   .gradient-cta,.gradient-button,.gallery-filter.active,.button-light,.button-outline-light,.outline-button,.desktop-nav>a:not(.gradient-cta)::after{transition:none!important}
 }
