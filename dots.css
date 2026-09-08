@@ -7,8 +7,7 @@ section,
 }
 
 .site-header::before,
-section::before,
-.dark-footer::before{
+section::before{
   content:"";
   position:absolute;
   inset:0;
@@ -28,10 +27,15 @@ section::before,
   animation:smDotsCircle 20s linear infinite,smHeaderDotsPulse 8s ease-in-out infinite;
 }
 
-/* Sfondi colorati/scuri: puntini chiari */
-.hero-gradient::before,
-.dark-footer::before{
+/* Hero colorata: puntini chiari */
+.hero-gradient::before{
   background-image:radial-gradient(circle,rgba(255,255,255,.52) 1.25px,transparent 1.5px);
+}
+
+/* Footer nero: nessun puntino */
+.dark-footer::before{
+  content:none!important;
+  display:none!important;
 }
 
 .site-header > *,
@@ -72,8 +76,7 @@ section > *,
 
 @media(prefers-reduced-motion:reduce){
   .site-header::before,
-  section::before,
-  .dark-footer::before{
+  section::before{
     animation:none!important;
     opacity:.28;
     background-position:0 0;
