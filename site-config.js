@@ -2,7 +2,7 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
 (function(){
   var link=document.createElement('link');
   link.rel='stylesheet';
-  link.href='theme-11a.css?v=4';
+  link.href='theme-11a.css?v=5';
   document.head.appendChild(link);
   var dots=document.createElement('link');
   dots.rel='stylesheet';
@@ -115,6 +115,140 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
       if(actions) actions.insertAdjacentElement('beforebegin',conditions);
       else priceSide.appendChild(conditions);
     }
+
+    /* Punto 18: miglioramenti di accessibilità e uso da tastiera */
+    var main=document.querySelector('main');
+    if(main){
+      if(!main.id) main.id='contenuto';
+      if(!document.querySelector('.skip-link')){
+        var skip=document.createElement('a');
+        skip.className='skip-link';
+        skip.href='#'+main.id;
+        skip.textContent='Salta al contenuto';
+        document.body.insertAdjacentElement('afterbegin',skip);
+      }
+    }
+
+    var desktopNav=document.querySelector('.desktop-nav');
+    if(desktopNav) desktopNav.setAttribute('aria-label','Navigazione principale');
+    var mobileNav=document.getElementById('mobileNav');
+    if(mobileNav) mobileNav.setAttribute('aria-label','Navigazione mobile');
+    var menuButton=document.getElementById('menuButton');
+    if(menuButton){
+      menuButton.setAttribute('aria-controls','mobileNav');
+      function updateMenuLabel(){
+        menuButton.setAttribute('aria-label',menuButton.getAttribute('aria-expanded')==='true'?'Chiudi menu':'Apri menu');
+      }
+      updateMenuLabel();
+      menuButton.addEventListener('click',function(){setTimeout(updateMenuLabel,0);});
+      if(mobileNav) mobileNav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){setTimeout(updateMenuLabel,0);});});
+    }
+
+    var galleryFilters=document.querySelectorAll('.gallery-filter');
+    function updateFilterState(){
+      galleryFilters.forEach(function(button){button.setAttribute('aria-pressed',button.classList.contains('active')?'true':'false');});
+    }
+    updateFilterState();
+    galleryFilters.forEach(function(button){button.addEventListener('click',function(){setTimeout(updateFilterState,0);});});
+
+    var calculatorResult=document.querySelector('.calculator-result');
+    if(calculatorResult){
+      calculatorResult.setAttribute('role','status');
+      calculatorResult.setAttribute('aria-live','polite');
+      calculatorResult.setAttribute('aria-atomic','true');
+    }
+
+    var lightbox=document.getElementById('imageLightbox');
+    var lightboxClose=document.querySelector('.lightbox-close');
+    var lightboxCaption=document.getElementById('lightboxCaption');
+    if(lightbox){
+      lightbox.setAttribute('role','dialog');
+      lightbox.setAttribute('aria-modal','true');
+      if(lightboxCaption){
+        lightboxCaption.id=lightboxCaption.id||'lightboxCaption';
+        lightbox.setAttribute('aria-labelledby',lightboxCaption.id);
+      }
+    }
+    if(lightboxClose) lightboxClose.setAttribute('aria-label','Chiudi immagine ingrandita');
+
+    if(banner){
+      banner.setAttribute('role','region');
+      banner.setAttribute('aria-label','Preferenze privacy e cookie');
+    }
+
+    var cookieModal=document.getElementById('cookieModal');
+    var cookieClose=document.getElementById('closeCookieModal');
+    var cookieTitle=cookieModal ? cookieModal.querySelector('h2') : null;
+    if(cookieModal){
+      cookieModal.setAttribute('role','dialog');
+      cookieModal.setAttribute('aria-modal','true');
+      if(cookieTitle){
+        cookieTitle.id='cookieModalTitle';
+        cookieModal.setAttribute('aria-labelledby','cookieModalTitle');
+      }
+    }
+    if(cookieClose) cookieClose.setAttribute('aria-label','Chiudi preferenze cookie');
+
+    var lastLightboxTrigger=null;
+    var lastCookieTrigger=null;
+    document.querySelectorAll('[data-gallery-item]').forEach(function(card){
+      card.addEventListener('click',function(){
+        lastLightboxTrigger=card;
+        setTimeout(function(){if(lightbox && !lightbox.hasAttribute('hidden') && lightboxClose) lightboxClose.focus();},0);
+      });
+    });
+
+    ['customizeCookies','openCookiePreferencesFooter'].forEach(function(id){
+      var trigger=document.getElementById(id);
+      if(trigger){
+        trigger.addEventListener('click',function(){
+          lastCookieTrigger=trigger;
+          document.body.classList.add('no-scroll');
+          setTimeout(function(){if(cookieModal && !cookieModal.hasAttribute('hidden') && cookieClose) cookieClose.focus();},0);
+        });
+      }
+    });
+
+    function restoreLightboxFocus(){
+      if(lastLightboxTrigger && document.contains(lastLightboxTrigger)) lastLightboxTrigger.focus();
+    }
+    function restoreCookieFocus(){
+      document.body.classList.remove('no-scroll');
+      if(lastCookieTrigger && document.contains(lastCookieTrigger)) lastCookieTrigger.focus();
+    }
+
+    if(lightboxClose) lightboxClose.addEventListener('click',function(){setTimeout(restoreLightboxFocus,0);});
+    if(lightbox) lightbox.addEventListener('click',function(e){if(e.target===lightbox) setTimeout(restoreLightboxFocus,0);});
+    if(cookieClose) cookieClose.addEventListener('click',function(){setTimeout(restoreCookieFocus,0);});
+    ['saveRejectCookies','saveCookiePreferences'].forEach(function(id){
+      var button=document.getElementById(id);
+      if(button) button.addEventListener('click',function(){setTimeout(restoreCookieFocus,0);});
+    });
+
+    function trapFocus(e,dialog){
+      if(!dialog || dialog.hasAttribute('hidden') || e.key!=='Tab') return;
+      var focusable=Array.from(dialog.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter(function(el){return el.offsetParent!==null;});
+      if(!focusable.length) return;
+      var first=focusable[0];
+      var last=focusable[focusable.length-1];
+      if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+      else if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
+    }
+
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Tab'){
+        if(cookieModal && !cookieModal.hasAttribute('hidden')) trapFocus(e,cookieModal);
+        else if(lightbox && !lightbox.hasAttribute('hidden')) trapFocus(e,lightbox);
+      }
+      if(e.key==='Escape'){
+        var cookieWasOpen=cookieModal && !cookieModal.hasAttribute('hidden');
+        var lightboxWasOpen=lightbox && !lightbox.hasAttribute('hidden');
+        setTimeout(function(){
+          if(cookieWasOpen) restoreCookieFocus();
+          else if(lightboxWasOpen) restoreLightboxFocus();
+        },0);
+      }
+    });
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhancePage);
   else enhancePage();
