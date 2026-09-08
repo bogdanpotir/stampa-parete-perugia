@@ -53,6 +53,13 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
       });
       banner.appendChild(close);
     }
+
+    var marketingInput=document.getElementById('marketingConsent');
+    var marketingRow=marketingInput ? marketingInput.closest('.cookie-row') : null;
+    var marketingText=marketingRow ? marketingRow.querySelector('p') : null;
+    if(marketingText){
+      marketingText.textContent='TikTok Pixel. Google Tag Manager è il contenitore usato per caricare i tag autorizzati e non rappresenta una finalità autonoma.';
+    }
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhancePage);
   else enhancePage();
