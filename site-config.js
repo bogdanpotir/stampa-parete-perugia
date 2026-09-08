@@ -2,7 +2,7 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
 (function(){
   var link=document.createElement('link');
   link.rel='stylesheet';
-  link.href='theme-11a.css?v=5';
+  link.href='theme-11a.css?v=6';
   document.head.appendChild(link);
   var dots=document.createElement('link');
   dots.rel='stylesheet';
