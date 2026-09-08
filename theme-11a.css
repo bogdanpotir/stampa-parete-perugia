@@ -89,27 +89,28 @@
   right:0;
 }
 
-/* Brand header: simbolo separato dal testo */
+/* Brand header: simbolo grande + testo HTML separato */
 .site-header{
-  height:96px!important;
+  height:108px!important;
+  padding-left:24px!important;
 }
 .brand.brand-lockup{
   display:flex!important;
   align-items:center;
-  gap:10px;
+  gap:18px;
   width:auto!important;
-  min-width:430px;
+  min-width:550px;
   margin-right:auto;
   text-decoration:none;
   overflow:visible;
 }
 .brand-lockup .brand-mark{
-  width:170px!important;
-  height:170px!important;
+  width:220px!important;
+  height:220px!important;
   max-width:none!important;
-  flex:0 0 170px;
+  flex:0 0 220px;
   object-fit:contain;
-  margin:-37px -28px;
+  margin:-55px -8px -55px 0;
 }
 .brand-copy{
   display:flex;
@@ -120,32 +121,39 @@
 }
 .brand-name{
   color:#171c27;
-  font-size:34px;
+  font-size:42px;
   font-weight:700;
-  letter-spacing:-1.7px;
+  letter-spacing:-2.1px;
 }
 .brand-area{
-  margin-top:8px;
+  margin-top:9px;
   color:#242936;
-  font-size:10px;
+  font-size:11px;
   font-weight:500;
-  letter-spacing:6px;
+  letter-spacing:6.2px;
+}
+
+/* Il logo duplicato nella hero viene rimosso */
+.hero-logo{
+  display:none!important;
 }
 
 @media(max-width:1100px){
-  .brand.brand-lockup{min-width:360px;gap:7px}
-  .brand-lockup .brand-mark{width:150px!important;height:150px!important;flex-basis:150px;margin:-32px -26px}
-  .brand-name{font-size:29px}
-  .brand-area{font-size:8px;letter-spacing:5px;margin-top:7px}
+  .site-header{height:94px!important}
+  .brand.brand-lockup{min-width:430px;gap:14px}
+  .brand-lockup .brand-mark{width:180px!important;height:180px!important;flex-basis:180px;margin:-43px -6px -43px 0}
+  .brand-name{font-size:34px;letter-spacing:-1.7px}
+  .brand-area{font-size:9px;letter-spacing:5.2px;margin-top:7px}
+  .mobile-nav{top:94px!important}
 }
 
 @media(max-width:700px){
-  .site-header{height:76px!important}
-  .brand.brand-lockup{min-width:0;gap:4px}
-  .brand-lockup .brand-mark{width:116px!important;height:116px!important;flex-basis:116px;margin:-25px -23px}
-  .brand-name{font-size:21px;letter-spacing:-1px}
-  .brand-area{font-size:6.5px;letter-spacing:3.2px;margin-top:5px}
-  .mobile-nav{top:76px!important}
+  .site-header{height:78px!important;padding-left:12px!important}
+  .brand.brand-lockup{min-width:0;gap:9px}
+  .brand-lockup .brand-mark{width:140px!important;height:140px!important;flex-basis:140px;margin:-31px -5px -31px 0}
+  .brand-name{font-size:24px;letter-spacing:-1.1px}
+  .brand-area{font-size:6.8px;letter-spacing:3.3px;margin-top:5px}
+  .mobile-nav{top:78px!important}
 }
 
 @media (prefers-reduced-motion:reduce){
