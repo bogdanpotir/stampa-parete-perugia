@@ -2,7 +2,7 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
 (function(){
   var link=document.createElement('link');
   link.rel='stylesheet';
-  link.href='theme-11a.css?v=3';
+  link.href='theme-11a.css?v=4';
   document.head.appendChild(link);
   var dots=document.createElement('link');
   dots.rel='stylesheet';
@@ -12,7 +12,7 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
   if(themeMeta) themeMeta.setAttribute('content','#E85C8A');
 })();
 (function(){
-  function buildHeaderBrand(){
+  function enhancePage(){
     var brand=document.querySelector('.site-header .brand');
     if(brand && !brand.querySelector('.brand-copy')){
       brand.classList.add('brand-lockup');
@@ -29,7 +29,31 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
     }
     var heroLogo=document.querySelector('.hero-logo');
     if(heroLogo) heroLogo.remove();
+
+    var banner=document.getElementById('cookieBanner');
+    if(banner && !banner.querySelector('.cookie-banner-close')){
+      banner.classList.add('cookie-banner-enhanced');
+      var copyBox=banner.firstElementChild;
+      if(copyBox){
+        copyBox.classList.add('cookie-banner-copy');
+        var p=copyBox.querySelector('p');
+        if(p){
+          p.innerHTML='Usiamo strumenti necessari al funzionamento del sito. Analytics e strumenti marketing, come TikTok Pixel, vengono attivati solo con il tuo consenso. <a href="privacy.html">Privacy Policy</a> · <a href="cookie.html">Cookie Policy</a>.';
+        }
+      }
+      var close=document.createElement('button');
+      close.type='button';
+      close.className='cookie-banner-close';
+      close.setAttribute('aria-label','Chiudi e continua senza cookie opzionali');
+      close.setAttribute('title','Chiudi e continua senza cookie opzionali');
+      close.textContent='×';
+      close.addEventListener('click',function(){
+        var reject=document.getElementById('rejectCookies');
+        if(reject) reject.click();
+      });
+      banner.appendChild(close);
+    }
   }
-  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',buildHeaderBrand);
-  else buildHeaderBrand();
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhancePage);
+  else enhancePage();
 })();
