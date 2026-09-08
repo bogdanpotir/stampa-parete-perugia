@@ -30,6 +30,13 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
     var heroLogo=document.querySelector('.hero-logo');
     if(heroLogo) heroLogo.remove();
 
+    /* Ordine sezioni: destinatari prima delle superfici */
+    var audienceSection=document.querySelector('.audience-section');
+    var surfaceSection=document.getElementById('superfici');
+    if(audienceSection && surfaceSection && audienceSection.nextElementSibling!==surfaceSection){
+      surfaceSection.parentNode.insertBefore(audienceSection,surfaceSection);
+    }
+
     var banner=document.getElementById('cookieBanner');
     if(banner && !banner.querySelector('.cookie-banner-close')){
       banner.classList.add('cookie-banner-enhanced');
