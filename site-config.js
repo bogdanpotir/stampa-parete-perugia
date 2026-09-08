@@ -1,4 +1,4 @@
-window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpeg'],logo:'smimages/logo.svg',formBookingUrl:'https://docs.google.com/forms/d/e/1FAIpQLSeVzuS1ifXUKh8f2-UYChsx437u9VIwvZ7YnH1cx9hwiAvC7g/viewform?usp=pp_url&entry.1494247680=Vorrei%20prenotare%20una%20valutazione%20iniziale%20e%20una%20stima%20del%20costo%20dal%2029%20ottobre%202026.%20Data%20e%20orario%20da%20concordare.%20La%20mia%20idea%3A%20',calendarUrl:'https://calendar.app.google/FyBGswLg36JMfPw3A',whatsappNumber:'393204178026',pricePerSqm:80,minimumBillableSqm:1,analytics:{gtm:'GTM-TJSWCMD3',ga4:'G-4NVPNZHY9S',tiktok:'D9UU2MJC77UE58FDAJQG'},videos:{video1:'',video2:'',video3:'',video4:''}};
+window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpeg'],logo:'smimages/logo.svg',formBookingUrl:'https://docs.google.com/forms/d/e/1FAIpQLSeVzuS1ifXUKh8f2-UYChsx437u9VIwvZ7YnH1cx9hwiAvC7g/viewform?usp=pp_url&entry.1494247680=Vorrei%20richiedere%20una%20valutazione%20per%20una%20stampa%20su%20parete%20e%20una%20stima%20del%20costo%20dal%2029%20ottobre%202026.%20Data%20e%20orario%20da%20concordare.%20La%20mia%20idea%3A%20',calendarUrl:'https://calendar.app.google/FyBGswLg36JMfPw3A',whatsappNumber:'393204178026',pricePerSqm:80,minimumBillableSqm:1,analytics:{gtm:'GTM-TJSWCMD3',ga4:'G-4NVPNZHY9S',tiktok:'D9UU2MJC77UE58FDAJQG'},videos:{video1:'',video2:'',video3:'',video4:''}};
 (function(){
   var link=document.createElement('link');
   link.rel='stylesheet';
@@ -107,17 +107,17 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
     addFormPrivacyNotice(document.querySelector('.price-side .price-actions')?.parentElement);
     addFormPrivacyNotice(document.querySelector('.booking-actions'));
 
-    /* Punto 14: condizioni chiare della valutazione preliminare */
+    /* Condizioni del preventivo */
     var priceSide=document.querySelector('.price-side');
-    if(priceSide && !priceSide.querySelector('.preliminary-conditions')){
+    if(priceSide && !priceSide.querySelector('.quote-conditions')){
       var priceIntro=priceSide.querySelector('.price-big + p');
       if(priceIntro){
-        priceIntro.textContent='Stima indicativa della sola stampa, con minimo indicativo di €80. Il valore mostrato dal calcolatore non costituisce un preventivo definitivo né un’offerta commerciale. Eventuali trasferta, preparazione o trattamento della parete, adattamento della grafica e altre lavorazioni vengono valutati separatamente.';
+        priceIntro.textContent='Stima indicativa della sola stampa, con minimo indicativo di €80. Il valore mostrato dal calcolatore non costituisce un preventivo definitivo. Eventuali trasferta, preparazione o trattamento della parete, adattamento della grafica e altre lavorazioni vengono valutati separatamente.';
       }
       var conditions=document.createElement('p');
-      conditions.className='preliminary-conditions';
+      conditions.className='quote-conditions';
       conditions.style.cssText='margin:16px 0 0;font-size:13px;line-height:1.55;color:inherit;opacity:.9;';
-      conditions.innerHTML='<strong>Fase attuale:</strong> il sito è utilizzato per studio di mercato e valutazioni preliminari. Non è possibile concludere acquisti o effettuare pagamenti tramite il sito. Le richieste sono gratuite e non vincolanti, non costituiscono ordine o contratto e non prevedono caparre o penali di cancellazione. L’eventuale rapporto commerciale sarà definito solo dopo l’avvio dell’attività, con conferma separata di prezzo, condizioni, fattibilità e data.';
+      conditions.innerHTML='<strong>Preventivo:</strong> la richiesta inviata tramite il sito è gratuita e non vincolante fino all’accettazione del preventivo. Prezzo finale, fattibilità, grafica, eventuali preparazioni della parete, trasferta e data vengono confermati dopo la valutazione del progetto.';
       var actions=priceSide.querySelector('.price-actions');
       if(actions) actions.insertAdjacentElement('beforebegin',conditions);
       else priceSide.appendChild(conditions);
