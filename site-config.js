@@ -87,6 +87,18 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
     if(durationItem){
       durationItem.innerHTML='<strong>Durata.</strong> Non è un valore standard: dipende da supporto, esposizione, usura e condizioni d’uso e va valutata in relazione al progetto specifico.';
     }
+
+    /* Punto 11: informativa breve prima dei collegamenti al Google Form */
+    function addFormPrivacyNotice(container){
+      if(!container || container.querySelector('.form-privacy-notice')) return;
+      var notice=document.createElement('p');
+      notice.className='form-privacy-notice';
+      notice.style.cssText='margin:12px 0 0;font-size:13px;line-height:1.5;color:inherit;opacity:.88;';
+      notice.innerHTML='Prima di inviare il modulo, leggi la <a href="privacy.html">Privacy Policy</a>. Invia solo i dati necessari alla valutazione. Evita di caricare foto che mostrino persone (in particolare minori), documenti, targhe, indirizzi leggibili o altri dati personali non necessari.';
+      container.appendChild(notice);
+    }
+    addFormPrivacyNotice(document.querySelector('.price-side .price-actions')?.parentElement);
+    addFormPrivacyNotice(document.querySelector('.booking-actions'));
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhancePage);
   else enhancePage();
