@@ -14,20 +14,24 @@ section::before,
   inset:0;
   z-index:0;
   pointer-events:none;
-  background-image:radial-gradient(circle,rgba(124,63,163,.26) 1.2px,transparent 1.45px);
+  background-image:radial-gradient(circle,rgba(82,82,90,.44) 1.25px,transparent 1.5px);
   background-size:22px 22px;
-  background-position:0 0;
-  opacity:.24;
-  animation:smDotsDrift 16s ease-in-out infinite alternate,smDotsPulse 7s ease-in-out infinite;
+  background-position:0 -18px;
+  opacity:.28;
+  animation:smDotsCircle 18s linear infinite,smDotsPulse 7s ease-in-out infinite;
 }
 
+/* Header: puntini grigi ma più discreti */
 .site-header::before{
-  opacity:.12;
+  background-image:radial-gradient(circle,rgba(82,82,90,.40) 1.2px,transparent 1.45px);
+  opacity:.18;
+  animation:smDotsCircle 20s linear infinite,smHeaderDotsPulse 8s ease-in-out infinite;
 }
 
+/* Sfondi colorati/scuri: puntini chiari */
 .hero-gradient::before,
 .dark-footer::before{
-  background-image:radial-gradient(circle,rgba(255,255,255,.46) 1.2px,transparent 1.45px);
+  background-image:radial-gradient(circle,rgba(255,255,255,.52) 1.25px,transparent 1.5px);
 }
 
 .site-header > *,
@@ -42,24 +46,28 @@ section > *,
   display:none!important;
 }
 
-@keyframes smDotsDrift{
-  0%{background-position:0 0}
-  50%{background-position:18px -12px}
-  100%{background-position:36px -26px}
+/* Movimento circolare: la trama percorre un piccolo cerchio continuo */
+@keyframes smDotsCircle{
+  0%{background-position:0 -18px}
+  12.5%{background-position:13px -13px}
+  25%{background-position:18px 0}
+  37.5%{background-position:13px 13px}
+  50%{background-position:0 18px}
+  62.5%{background-position:-13px 13px}
+  75%{background-position:-18px 0}
+  87.5%{background-position:-13px -13px}
+  100%{background-position:0 -18px}
 }
 
+/* Respiro dell'opacità */
 @keyframes smDotsPulse{
-  0%,100%{opacity:.18}
-  50%{opacity:.46}
-}
-
-.site-header::before{
-  animation:smDotsDrift 18s ease-in-out infinite alternate,smHeaderDotsPulse 8s ease-in-out infinite;
+  0%,100%{opacity:.22}
+  50%{opacity:.42}
 }
 
 @keyframes smHeaderDotsPulse{
-  0%,100%{opacity:.07}
-  50%{opacity:.16}
+  0%,100%{opacity:.12}
+  50%{opacity:.24}
 }
 
 @media(prefers-reduced-motion:reduce){
@@ -67,7 +75,8 @@ section > *,
   section::before,
   .dark-footer::before{
     animation:none!important;
-    opacity:.2;
+    opacity:.28;
+    background-position:0 0;
   }
-  .site-header::before{opacity:.1}
+  .site-header::before{opacity:.16}
 }
