@@ -1,0 +1,94 @@
+:root{
+  --pink:#E85C8A;
+  --violet:#7C3FA3;
+  --blue:#0AA9FE;
+  --orange:#FF8A00;
+  --gradient:linear-gradient(90deg,#E85C8A 0%,#7C3FA3 52%,#0AA9FE 100%);
+  --hero-gradient:linear-gradient(115deg,#E85C8A 0%,#7C3FA3 50%,#0AA9FE 100%);
+  --hover-gradient:linear-gradient(90deg,#FF8A00 0%,#FF3B7F 27%,#7C3FA3 62%,#0AA9FE 100%);
+}
+
+/* Palette 11A: rosa -> viola -> azzurro brillante */
+.gradient-cta,
+.gradient-button,
+.gallery-filter.active{
+  background:var(--gradient)!important;
+  background-size:100% 100%!important;
+  transition:background .28s ease,background-size .28s ease,transform .22s ease,box-shadow .28s ease,color .22s ease,border-color .22s ease;
+}
+
+/* Hover “acceso”: arancio -> rosa -> viola -> azzurro */
+.gradient-cta:hover,
+.gradient-cta:focus-visible,
+.gradient-button:hover,
+.gradient-button:focus-visible,
+.gallery-filter.active:hover,
+.gallery-filter.active:focus-visible{
+  background:var(--hover-gradient)!important;
+  background-size:115% 100%!important;
+  box-shadow:0 10px 28px rgba(232,92,138,.28),0 4px 16px rgba(10,169,254,.18);
+  transform:translateY(-1px);
+}
+
+/* I pulsanti chiari della hero si accendono solo al passaggio del mouse */
+.button-light,
+.button-outline-light,
+.outline-button{
+  transition:background .28s ease,transform .22s ease,box-shadow .28s ease,color .22s ease,border-color .22s ease;
+}
+
+.button-light:hover,
+.button-light:focus-visible,
+.button-outline-light:hover,
+.button-outline-light:focus-visible,
+.outline-button:hover,
+.outline-button:focus-visible{
+  background:var(--hover-gradient)!important;
+  color:#fff!important;
+  border-color:transparent!important;
+  box-shadow:0 10px 28px rgba(232,92,138,.26),0 4px 16px rgba(10,169,254,.16);
+  transform:translateY(-1px);
+}
+
+/* Piccoli accenti del sito */
+.tiny-gradient-line,
+.play-button{
+  background:var(--gradient)!important;
+}
+
+.spec-icon,
+.benefit-icon,
+.audience-icon{
+  background:var(--gradient)!important;
+  -webkit-background-clip:text!important;
+  background-clip:text!important;
+  color:transparent!important;
+}
+
+.icon-box{
+  border-image:var(--gradient) 1!important;
+}
+
+/* Link menu: sottolineatura gradient al passaggio */
+.desktop-nav>a:not(.gradient-cta),
+.mobile-nav a{
+  position:relative;
+}
+.desktop-nav>a:not(.gradient-cta)::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:100%;
+  bottom:-8px;
+  height:3px;
+  background:var(--hover-gradient);
+  transition:right .22s ease;
+}
+.desktop-nav>a:not(.gradient-cta):hover::after,
+.desktop-nav>a:not(.gradient-cta):focus-visible::after{
+  right:0;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .gradient-cta,.gradient-button,.gallery-filter.active,.button-light,.button-outline-light,.outline-button,.desktop-nav>a:not(.gradient-cta)::after{transition:none!important}
+}
