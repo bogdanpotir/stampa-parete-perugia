@@ -1,1 +1,9 @@
 window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpeg'],logo:'smimages/logo.svg',formBookingUrl:'https://docs.google.com/forms/d/e/1FAIpQLSeVzuS1ifXUKh8f2-UYChsx437u9VIwvZ7YnH1cx9hwiAvC7g/viewform?usp=pp_url&entry.1494247680=Vorrei%20prenotare%20una%20valutazione%20iniziale%20e%20una%20stima%20del%20costo%20dal%2029%20ottobre%202026.%20Data%20e%20orario%20da%20concordare.%20La%20mia%20idea%3A%20',calendarUrl:'https://calendar.app.google/FyBGswLg36JMfPw3A',whatsappNumber:'393204178026',pricePerSqm:80,minimumBillableSqm:1,analytics:{gtm:'GTM-TJSWCMD3',ga4:'G-4NVPNZHY9S',tiktok:'D9UU2MJC77UE58FDAJQG'},videos:{video1:'',video2:'',video3:'',video4:''}};
+(function(){
+  var link=document.createElement('link');
+  link.rel='stylesheet';
+  link.href='theme-11a.css?v=1';
+  document.head.appendChild(link);
+  var themeMeta=document.querySelector('meta[name="theme-color"]');
+  if(themeMeta) themeMeta.setAttribute('content','#E85C8A');
+})();
