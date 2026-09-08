@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 96" role="img" aria-labelledby="title desc">
+<title id="title">StampaMurale</title><desc id="desc">Logo StampaMurale compatto</desc>
+<defs><linearGradient id="g" x1="12" y1="18" x2="170" y2="78" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#E85C8A"/><stop offset="0.34" stop-color="#D94CB8"/><stop offset="0.62" stop-color="#7C3FA3"/><stop offset="1" stop-color="#0AA9FE"/></linearGradient><mask id="cut"><rect width="190" height="96" fill="white"/><path d="M68 28 C84 37 99 51 117 72" fill="none" stroke="black" stroke-width="26" stroke-linecap="round"/></mask></defs>
+<path d="M18 48 C18 22 43 14 64 25 C77 32 88 45 100 58 C117 77 131 85 149 81 C170 77 181 61 177 46 C174 31 161 21 147 23 C133 25 123 35 111 48 L88 73 C73 88 47 88 30 75 C22 69 18 59 18 48" fill="none" stroke="url(#g)" stroke-width="21" stroke-linecap="round" stroke-linejoin="round" mask="url(#cut)"/><path d="M68 28 C84 37 99 51 117 72" fill="none" stroke="url(#g)" stroke-width="21" stroke-linecap="round"/>
+<text x="200" y="61" font-family="Montserrat, Arial, Helvetica, sans-serif" font-size="46" font-weight="700" letter-spacing="-1.7" fill="#20242D">StampaMurale</text>
+</svg>
