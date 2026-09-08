@@ -1,4 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#111827"/>
-  <path d="M15 45V19h8l9 14 9-14h8v26h-8V31l-9 13-9-13v14z" fill="#ffffff"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 120" role="img" aria-label="StampaMurale">
+  <defs>
+    <linearGradient id="ribbon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ffb45f"/>
+      <stop offset="0.18" stop-color="#ff684f"/>
+      <stop offset="0.38" stop-color="#ef3b91"/>
+      <stop offset="0.56" stop-color="#a13bdd"/>
+      <stop offset="0.72" stop-color="#4b55ee"/>
+      <stop offset="1" stop-color="#2abcf2"/>
+    </linearGradient>
+    <linearGradient id="shadeWarm" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ff6a43"/>
+      <stop offset="1" stop-color="#a8197f"/>
+    </linearGradient>
+    <linearGradient id="shadeCool" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#4031bd"/>
+      <stop offset="1" stop-color="#0f68d8"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(18 5)">
+    <path d="M18 55 C18 25 52 18 78 40 L110 68 C132 87 166 82 171 56 C176 30 146 17 123 34 L79 77 C53 101 18 87 18 55 Z" fill="none" stroke="url(#ribbon)" stroke-width="24" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M35 75 C49 87 64 86 79 74 L96 58" fill="none" stroke="url(#shadeWarm)" stroke-width="18" stroke-linecap="round" opacity=".72"/>
+    <path d="M111 67 C126 80 145 82 158 68" fill="none" stroke="url(#shadeCool)" stroke-width="15" stroke-linecap="round" opacity=".45"/>
+    <path d="M30 37 C43 23 61 24 77 37" fill="none" stroke="#ffd07a" stroke-width="5" stroke-linecap="round" opacity=".55"/>
+    <path d="M135 29 C150 25 163 34 167 46" fill="none" stroke="#66d9ff" stroke-width="5" stroke-linecap="round" opacity=".5"/>
+  </g>
 </svg>
