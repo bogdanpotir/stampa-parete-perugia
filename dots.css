@@ -1,0 +1,73 @@
+/* Trama di puntini animata su tutta la pagina */
+.site-header,
+section,
+.dark-footer{
+  position:relative;
+  isolation:isolate;
+}
+
+.site-header::before,
+section::before,
+.dark-footer::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background-image:radial-gradient(circle,rgba(124,63,163,.26) 1.2px,transparent 1.45px);
+  background-size:22px 22px;
+  background-position:0 0;
+  opacity:.24;
+  animation:smDotsDrift 16s ease-in-out infinite alternate,smDotsPulse 7s ease-in-out infinite;
+}
+
+.site-header::before{
+  opacity:.12;
+}
+
+.hero-gradient::before,
+.dark-footer::before{
+  background-image:radial-gradient(circle,rgba(255,255,255,.46) 1.2px,transparent 1.45px);
+}
+
+.site-header > *,
+section > *,
+.dark-footer > *{
+  position:relative;
+  z-index:1;
+}
+
+/* Disattiva la vecchia trama limitata alla sola hero */
+.hero-dots{
+  display:none!important;
+}
+
+@keyframes smDotsDrift{
+  0%{background-position:0 0}
+  50%{background-position:18px -12px}
+  100%{background-position:36px -26px}
+}
+
+@keyframes smDotsPulse{
+  0%,100%{opacity:.18}
+  50%{opacity:.46}
+}
+
+.site-header::before{
+  animation:smDotsDrift 18s ease-in-out infinite alternate,smHeaderDotsPulse 8s ease-in-out infinite;
+}
+
+@keyframes smHeaderDotsPulse{
+  0%,100%{opacity:.07}
+  50%{opacity:.16}
+}
+
+@media(prefers-reduced-motion:reduce){
+  .site-header::before,
+  section::before,
+  .dark-footer::before{
+    animation:none!important;
+    opacity:.2;
+  }
+  .site-header::before{opacity:.1}
+}
