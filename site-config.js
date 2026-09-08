@@ -2,8 +2,23 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
 (function(){
   var link=document.createElement('link');
   link.rel='stylesheet';
-  link.href='theme-11a.css?v=1';
+  link.href='theme-11a.css?v=2';
   document.head.appendChild(link);
   var themeMeta=document.querySelector('meta[name="theme-color"]');
   if(themeMeta) themeMeta.setAttribute('content','#E85C8A');
+})();
+(function(){
+  function buildHeaderBrand(){
+    var brand=document.querySelector('.site-header .brand');
+    if(!brand || brand.querySelector('.brand-copy')) return;
+    brand.classList.add('brand-lockup');
+    var img=brand.querySelector('img');
+    if(img) img.classList.add('brand-mark');
+    var copy=document.createElement('span');
+    copy.className='brand-copy';
+    copy.innerHTML='<span class="brand-name">StampaMurale</span><span class="brand-area">PERUGIA&nbsp;&nbsp;•&nbsp;&nbsp;UMBRIA</span>';
+    brand.appendChild(copy);
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',buildHeaderBrand);
+  else buildHeaderBrand();
 })();
