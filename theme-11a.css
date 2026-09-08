@@ -206,6 +206,17 @@
   min-height:44px;
 }
 
+/* Calcolatore: cursore e caret sempre ben visibili nei campi numerici */
+.calculator input[type="number"]{
+  cursor:text!important;
+  caret-color:#303030!important;
+  color:#303030!important;
+}
+.calculator input[type="number"]:hover,
+.calculator input[type="number"]:focus{
+  cursor:text!important;
+}
+
 @media(max-width:1100px){
   .site-header{height:94px!important}
   .brand.brand-lockup{min-width:430px;gap:14px}
