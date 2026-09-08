@@ -1,0 +1,44 @@
+STAMPA MURALE — IMAGE MAP
+==========================
+Cartella immagini: /smimages/
+Nel codice si usa solo il nome logico (image1, image2, ...).
+Il sito prova automaticamente: .webp, .png, .jpg, .jpeg.
+Se non trova il file, mostra un placeholder.
+
+LOGO
+logo.svg = logo centrale del sito. Per cambiare logo in tutto il sito basta sostituire questo file mantenendo lo stesso nome.
+
+HERO
+image1 = hero, immagine superiore destra
+image2 = hero, immagine inferiore destra
+
+VIDEO / TECNOLOGIA
+image3 = thumbnail video1, introduzione / stampante murale
+video1 = video YouTube introduttivo (URL da inserire in site-config.js)
+
+GALLERIA
+image4 = progetto galleria, uffici e aziende
+image5 = progetto galleria, locali commerciali
+image6 = progetto galleria, scuole
+image7 = progetto galleria, appartamenti e case
+image8 = progetto galleria, servizi pubblici
+image9 = progetto galleria, arte e decorazione
+
+APPLICAZIONI
+image10 = logo aziendale su parete
+image11 = fotografia stampata su parete
+image12 = stampa su cemento / mattone / legno
+image13 = thumbnail video2, stampa su superficie materica
+video2 = video YouTube superfici / materiali
+
+CONFRONTO E SPIEGAZIONE
+image14 = thumbnail video3, confronto stampa diretta / carta da parati / pellicole
+video3 = video YouTube confronto
+image15 = thumbnail video4, che cos'è la stampa murale
+video4 = video YouTube spiegazione tecnologia
+
+FORMATO CONSIGLIATO
+- Fotografie: WebP, qualità 80-90, lato lungo 2000-2600 px.
+- Se hai già PNG/JPG puoi usarli senza cambiare il codice.
+- Per trasparenze o loghi: SVG o PNG.
+- Nomi file in minuscolo esattamente come sopra: image1.webp, image2.png, ecc.
