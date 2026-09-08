@@ -1,4 +1,4 @@
-window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpeg'],logo:'smimages/logo.svg',formBookingUrl:'https://docs.google.com/forms/d/e/1FAIpQLSeVzuS1ifXUKh8f2-UYChsx437u9VIwvZ7YnH1cx9hwiAvC7g/viewform?usp=pp_url&entry.1494247680=Vorrei%20richiedere%20una%20valutazione%20per%20una%20stampa%20su%20parete%20e%20una%20stima%20del%20costo%20dal%2029%20ottobre%202026.%20Data%20e%20orario%20da%20concordare.%20La%20mia%20idea%3A%20',calendarUrl:'https://calendar.app.google/FyBGswLg36JMfPw3A',whatsappNumber:'393204178026',pricePerSqm:80,minimumBillableSqm:1,analytics:{gtm:'GTM-TJSWCMD3',ga4:'G-4NVPNZHY9S',tiktok:'D9UU2MJC77UE58FDAJQG'},videos:{video1:'',video2:'',video3:'',video4:''}};
+window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpeg'],logo:'smimages/logo.svg',formBookingUrl:'https://docs.google.com/forms/d/e/1FAIpQLSeVzuS1ifXUKh8f2-UYChsx437u9VIwvZ7YnH1cx9hwiAvC7g/viewform?usp=pp_url&entry.1494247680=Vorrei%20richiedere%20una%20valutazione%20per%20una%20stampa%20su%20parete%20e%20una%20stima%20del%20costo%20dal%2029%20ottobre%202026.%20Data%20e%20orario%20da%20concordare.%20La%20mia%20idea%3A%20',calendarUrl:'https://calendar.app.google/FyBGswLg36JMfPw3A',whatsappNumber:'393204178026',contactEmail:'info@stampamurale.it',pricePerSqm:80,minimumBillableSqm:1,analytics:{gtm:'GTM-TJSWCMD3',ga4:'G-4NVPNZHY9S',tiktok:'D9UU2MJC77UE58FDAJQG'},videos:{video1:'',video2:'',video3:'',video4:''}};
 (function(){
   var link=document.createElement('link');
   link.rel='stylesheet';
@@ -29,6 +29,11 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
     }
     var heroLogo=document.querySelector('.hero-logo');
     if(heroLogo) heroLogo.remove();
+
+    document.querySelectorAll('a[href="mailto:baxx99@gmail.com"]').forEach(function(a){
+      a.href='mailto:'+window.SM_CONFIG.contactEmail;
+      a.textContent=window.SM_CONFIG.contactEmail;
+    });
 
     /* Ordine sezioni: destinatari prima delle superfici */
     var audienceSection=document.querySelector('.audience-section');
