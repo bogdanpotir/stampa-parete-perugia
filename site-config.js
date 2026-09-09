@@ -288,3 +288,21 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',moveWhatIsSection);
   else moveWhatIsSection();
 })();
+
+/* Sposta video3 al posto del riquadro image3 e rimuove la vecchia colonna */
+(function(){
+  function moveVideo3ToIntro(){
+    var introColumn=document.querySelector('#introduzione .video-column');
+    var video3=document.querySelector('.comparison-section [data-video="video3"]');
+    var comparisonColumn=video3 ? video3.closest('.video-column') : null;
+    var comparisonLayout=document.querySelector('.comparison-section .comparison-layout');
+    if(!introColumn || !video3) return;
+    introColumn.innerHTML='';
+    video3.classList.remove('portrait');
+    introColumn.appendChild(video3);
+    if(comparisonColumn) comparisonColumn.remove();
+    if(comparisonLayout) comparisonLayout.style.gridTemplateColumns='1fr';
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',moveVideo3ToIntro);
+  else moveVideo3ToIntro();
+})();
