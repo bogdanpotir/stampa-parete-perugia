@@ -113,7 +113,7 @@
   margin:-55px -8px -55px 0;
 }
 .brand-copy{
-  display:flex;
+  display:flex!important;
   flex-direction:column;
   justify-content:center;
   line-height:1;
@@ -221,6 +221,17 @@
 .hero-image figcaption,
 .video-placeholder .video-note{
   display:none!important;
+}
+
+/* Anteprima reale del video 3 prima del click */
+.video-placeholder[data-video="video3"]{
+  background-image:url("https://i.ytimg.com/vi/hOgHNrBdajQ/hqdefault.jpg")!important;
+  background-size:cover!important;
+  background-position:center!important;
+  background-repeat:no-repeat!important;
+}
+.video-placeholder[data-video="video3"] > img{
+  opacity:0!important;
 }
 
 @media(max-width:1100px){
