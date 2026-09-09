@@ -1,6 +1,6 @@
 (()=>{
   const C=window.SM_CONFIG||{};
-  C.videos=Object.assign({},C.videos,{video3:'https://www.youtube.com/shorts/hOgHNrBdajQ'});
+  C.videos=Object.assign({},C.videos,{video2:'https://www.youtube.com/shorts/PhzGXmupyX0',video3:'https://www.youtube.com/shorts/hOgHNrBdajQ'});
   const FORM_BOOKING_URL=C.formBookingUrl;
   const PRICE_PER_SQM=C.pricePerSqm||80;
   const MIN_BILLABLE_SQM=C.minimumBillableSqm||1;
@@ -51,6 +51,26 @@
     const match=String(url).match(/(?:youtube\.com\/(?:shorts\/|watch\?v=|embed\/)|youtu\.be\/)([A-Za-z0-9_-]{6,})/i);
     return match?match[1]:'';
   }
+
+  /* Porta video2 accanto a “Che cos'è la stampa murale?” e lascia il vecchio slot come video4 */
+  const whatVideo=document.querySelector('.what-section [data-video="video4"]');
+  const oldVideo2=document.querySelector('.application-section.soft-dots [data-video="video2"]');
+  if(whatVideo&&oldVideo2){
+    oldVideo2.dataset.video='video4';
+    whatVideo.dataset.video='video2';
+  }
+
+  /* Usa automaticamente la thumbnail YouTube per i video configurati */
+  document.querySelectorAll('[data-video]').forEach(btn=>{
+    const youtubeId=youtubeVideoId(C.videos?.[btn.dataset.video]);
+    if(!youtubeId)return;
+    btn.style.backgroundImage='url("https://i.ytimg.com/vi/'+youtubeId+'/hqdefault.jpg")';
+    btn.style.backgroundSize='cover';
+    btn.style.backgroundPosition='center';
+    btn.style.backgroundRepeat='no-repeat';
+    const preview=btn.querySelector('img');
+    if(preview)preview.style.opacity='0';
+  });
 
   document.querySelectorAll('[data-video]').forEach(btn=>btn.addEventListener('click',()=>{
     const key=btn.dataset.video;
