@@ -1,5 +1,6 @@
 (()=>{
   const C=window.SM_CONFIG||{};
+  C.videos=Object.assign({},C.videos,{video3:'https://www.youtube.com/shorts/hOgHNrBdajQ'});
   const FORM_BOOKING_URL=C.formBookingUrl;
   const PRICE_PER_SQM=C.pricePerSqm||80;
   const MIN_BILLABLE_SQM=C.minimumBillableSqm||1;
