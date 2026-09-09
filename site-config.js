@@ -265,3 +265,26 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',enhancePage);
   else enhancePage();
 })();
+
+/* Sposta la sezione che spiega “Che cos'è la stampa murale” subito prima dei prezzi */
+(function(){
+  function moveWhatIsSection(){
+    var priceSection=document.getElementById('prezzi');
+    if(!priceSection) return;
+    var target=null;
+    document.querySelectorAll('main section').forEach(function(section){
+      if(target) return;
+      var h2=section.querySelector('h2');
+      if(!h2) return;
+      var text=(h2.textContent||'').toLowerCase().replace(/[’']/g,"'").trim();
+      if(text.indexOf('che cos')!==-1 && text.indexOf('stampa murale')!==-1){
+        target=section;
+      }
+    });
+    if(target && target!==priceSection.previousElementSibling){
+      priceSection.parentNode.insertBefore(target,priceSection);
+    }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',moveWhatIsSection);
+  else moveWhatIsSection();
+})();
