@@ -127,7 +127,6 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
       if(actions) actions.insertAdjacentElement('beforebegin',conditions);
       else priceSide.appendChild(conditions);
     }
-
     /* Punto 18: miglioramenti di accessibilità e uso da tastiera */
     var main=document.querySelector('main');
     if(main){
@@ -236,7 +235,6 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
       var button=document.getElementById(id);
       if(button) button.addEventListener('click',function(){setTimeout(restoreCookieFocus,0);});
     });
-
     function trapFocus(e,dialog){
       if(!dialog || dialog.hasAttribute('hidden') || e.key!=='Tab') return;
       var focusable=Array.from(dialog.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter(function(el){return el.offsetParent!==null;});
@@ -305,4 +303,31 @@ window.SM_CONFIG={imageBase:'smimages/',imageExtensions:['webp','png','jpg','jpe
   }
   if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',moveVideo3ToIntro);
   else moveVideo3ToIntro();
+})();
+
+/* Tracking click email: il visitatore apre direttamente StampaMurale.it, il click viene registrato in background. */
+(function(){
+  var endpoint='https://script.google.com/macros/s/AKfycbyZkCGOyyGn7fXEx12I8VzKE8gp_a48DNsnPbNI8XLMWw6d69904kknPX5oZmoPUeo/exec';
+  function trackEmailClick(){
+    try{
+      var url=new URL(window.location.href);
+      var token=(url.searchParams.get('smid')||'').trim();
+      if(!/^[a-f0-9]{32}$/i.test(token)) return;
+
+      /* Richiesta fire-and-forget: non serve leggere la risposta, quindi non dipende da CORS. */
+      var ping=new Image();
+      ping.referrerPolicy='no-referrer';
+      ping.src=endpoint+'?mode=track&t='+encodeURIComponent(token)+'&_='+Date.now();
+
+      /* Togli il token dalla barra indirizzi senza ricaricare la pagina. */
+      url.searchParams.delete('smid');
+      var query=url.searchParams.toString();
+      var clean=url.pathname+(query?'?'+query:'')+url.hash;
+      window.history.replaceState(null,'',clean);
+    }catch(e){
+      /* Il tracking non deve mai bloccare il sito. */
+    }
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',trackEmailClick);
+  else trackEmailClick();
 })();
